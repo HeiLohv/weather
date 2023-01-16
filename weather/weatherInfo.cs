@@ -10,30 +10,75 @@ namespace weather
 {
     class weatherInfo
     {
-        public class coord
+
+
+        public class Root
         {
-            double lon { get; set; }
-            double lat { get; set; }
+            public Coord coord { get; set; }
+            public Weather[] weather { get; set; }
+            public string _base { get; set; }
+            public Main main { get; set; }
+            public int visibility { get; set; }
+            public Wind wind { get; set; }
+            public Snow snow { get; set; }
+            public Clouds clouds { get; set; }
+            public int dt { get; set; }
+            public Sys sys { get; set; }
+            public int timezone { get; set; }
+            public int id { get; set; }
+            public string name { get; set; }
+            public int cod { get; set; }
         }
 
-        public class weather
+        public class Coord
         {
-            string main { get; set; }
-            string description { get; set; }
-            string icon { get; set; }
+            public float lon { get; set; }
+            public float lat { get; set; }
         }
 
-        public class main
+        public class Main
         {
-            double temp { get; set; }
-            double feels_like { get; set; }
-            double temp_min { get; set; }
-            double temp_max { get; set; }
-            double humidity { get; set; }
+            public float temp { get; set; }
+            public float feels_like { get; set; }
+            public float temp_min { get; set; }
+            public float temp_max { get; set; }
+            public int pressure { get; set; }
+            public int humidity { get; set; }
         }
-        public class wind
+
+        public class Wind
         {
-            double speed { get; set; }
+            public float speed { get; set; }
+            public int deg { get; set; }
         }
+
+        public class Snow
+        {
+            public float _1h { get; set; }
+        }
+
+        public class Clouds
+        {
+            public int all { get; set; }
+        }
+
+        public class Sys
+        {
+            public int type { get; set; }
+            public int id { get; set; }
+            public string country { get; set; }
+            public int sunrise { get; set; }
+            public int sunset { get; set; }
+        }
+
+        public class Weather
+        {
+            public int id { get; set; }
+            public string main { get; set; }
+            public string description { get; set; }
+            public string icon { get; set; }
+        }
+
+
     }
 }
