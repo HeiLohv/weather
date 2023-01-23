@@ -230,5 +230,20 @@ namespace weather
                 }
             }
         }
+
+        private void labelError_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFeelsLike_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFeels_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
