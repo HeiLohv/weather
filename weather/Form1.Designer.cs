@@ -58,6 +58,8 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonShow = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonReadFile = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -368,7 +370,7 @@
             // 
             this.buttonShow.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonShow.Location = new System.Drawing.Point(23, 356);
+            this.buttonShow.Location = new System.Drawing.Point(23, 351);
             this.buttonShow.Name = "buttonShow";
             this.buttonShow.Size = new System.Drawing.Size(60, 22);
             this.buttonShow.TabIndex = 30;
@@ -380,7 +382,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDelete.Location = new System.Drawing.Point(89, 356);
+            this.buttonDelete.Location = new System.Drawing.Point(89, 351);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(60, 22);
             this.buttonDelete.TabIndex = 31;
@@ -388,12 +390,38 @@
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // buttonReadFile
+            // 
+            this.buttonReadFile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonReadFile.Location = new System.Drawing.Point(101, 381);
+            this.buttonReadFile.Name = "buttonReadFile";
+            this.buttonReadFile.Size = new System.Drawing.Size(71, 22);
+            this.buttonReadFile.TabIndex = 32;
+            this.buttonReadFile.Text = "Read file";
+            this.buttonReadFile.UseVisualStyleBackColor = false;
+            this.buttonReadFile.Click += new System.EventHandler(this.buttonReadFile_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSave.Location = new System.Drawing.Point(23, 381);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(72, 22);
+            this.buttonSave.TabIndex = 33;
+            this.buttonSave.Text = "Save to file";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(716, 427);
+            this.ClientSize = new System.Drawing.Size(716, 442);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonReadFile);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonShow);
             this.Controls.Add(this.buttonAdd);
@@ -465,6 +493,8 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonShow;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonReadFile;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
 

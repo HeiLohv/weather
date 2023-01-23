@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
+using System.IO;
 
 
 namespace weather
@@ -17,6 +18,9 @@ namespace weather
     {
         string apiKey = "168d1666fa09c5fdf5a98128f6ad20a4";
 
+        string file;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +28,7 @@ namespace weather
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            file = "../../cities.txt";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -188,9 +192,43 @@ namespace weather
                 else
                 {
                     //Meddelandet stängs   
-                };
+                }
             };
             
+        }
+
+        private void buttonReadFile_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(file))
+            {
+                //Använder StreamReader för att läsa och öppna filen
+                StreamReader Textfile = new StreamReader(file);
+                string line;
+
+                //Läser av rader
+                while ((line = Textfile.ReadLine()) != null)
+                {
+                    listBoxList.Items.Add(line);
+                }
+
+                //Stänger filen
+                Textfile.Close();
+            }
+            else
+            {
+                MessageBox.Show("Couldn't find this file.", "Error");
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter(file))
+            {
+                foreach (var item in listBoxList.Items)
+                {
+                    writer.WriteLine(item);
+                }
+            }
         }
     }
 }
