@@ -28,7 +28,7 @@ namespace weather
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            file = "../../cities.txt";
+            file = "../../places.txt";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace weather
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Lägger till i listan
+            //Sätter in i listan
             listBoxList.Items.Add(textBoxSearch_TextChanged.Text);
         }
 
@@ -175,7 +175,7 @@ namespace weather
             }
             else if (listBoxList.SelectedIndex <= -1)
             {
-                //Meddelande som visas om man inte har valt en post att ta bort 
+                //Meddelande som visas om man inte har valt en post
                 var itemNotSelected = MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
             }
             
@@ -222,6 +222,7 @@ namespace weather
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            //Skriver till cities.txt med StreamWriter
             using (StreamWriter writer = new StreamWriter(file))
             {
                 foreach (var item in listBoxList.Items)
