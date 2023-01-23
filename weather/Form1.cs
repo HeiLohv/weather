@@ -44,7 +44,7 @@ namespace weather
         void getWeather()
         {
 
-            //Tar fram data när det skrivs en stad i sökfältet
+            //Tar fram data om platsen som skrivits i sökfältet
             using (WebClient web = new WebClient())
             {
                 string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", textBoxSearch_TextChanged.Text, apiKey);
@@ -73,6 +73,7 @@ namespace weather
         }
         DateTime convertDateTime(long millisec)
         {
+            //Förvandlar till aktuell tid
             DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
             day = day.AddMilliseconds(millisec).ToLocalTime();
 
@@ -164,26 +165,23 @@ namespace weather
             labelFeels.Visible = true;
         }
 
-        //Kod för delete-knappen
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             string delete = "Are you sure you want to delete " + listBoxList.SelectedItem + "?";
 
+            //Om listan är tom
             if (listBoxList.Items.Count < 1)
             {
-
-                //Meddelande som visas om listan är tom
                 var listBoxIsEmpty = MessageBox.Show("There are no items to delete.", "Empty list", MessageBoxButtons.OK);
             }
+            //Om man inte har valt någon post att radera
             else if (listBoxList.SelectedIndex <= -1)
             {
-                //Meddelande som visas om man inte har valt en post
                 var itemNotSelected = MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
             }
-            
             else {
 
-                //Kod som frågar om man vill ta bort den valda posten 
+                //Frågar om man vill ta bort den valda posten 
                 var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
 
                 if (confirmResult == DialogResult.Yes)
@@ -203,7 +201,6 @@ namespace weather
         {
             if (File.Exists(file))
             {
-                //Använder StreamReader för att läsa och öppna filen
                 StreamReader Textfile = new StreamReader(file);
                 string line;
 
@@ -224,7 +221,7 @@ namespace weather
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //Skriver till cities.txt med StreamWriter
+            //Skriver till textfilen med StreamWriter
             using (StreamWriter writer = new StreamWriter(file))
             {
                 foreach (var item in listBoxList.Items)
