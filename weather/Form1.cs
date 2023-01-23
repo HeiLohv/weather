@@ -158,22 +158,38 @@ namespace weather
             labelFeels.Visible = true;
         }
 
-        //Kod för att ta bort en post
+        //Kod för delete-knappen
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             string delete = "Are you sure you want to delete " + listBoxList.SelectedItem + "?";
 
-            //Frågar om du vill ta bort 
-            var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
+            if (listBoxList.Items.Count < 1)
+            {
 
-            if(confirmResult == DialogResult.Yes)
-            {
-                listBoxList.Items.Remove(listBoxList.SelectedItem);
+                //Meddelande som visas om listan är tom
+                var listBoxIsEmpty = MessageBox.Show("There are no items to delete.", "Empty list", MessageBoxButtons.OK);
             }
-            else
+            else if (listBoxList.SelectedIndex <= -1)
             {
-                //   
+                //Meddelande som visas om man inte har valt en post att ta bort 
+                var itemNotSelected = MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
             }
+            
+            else {
+
+                //Kod som frågar om man vill ta bort den valda posten 
+                var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    //Tar bort den valda posten
+                    listBoxList.Items.Remove(listBoxList.SelectedItem);
+                }
+                else
+                {
+                    //Meddelandet stängs   
+                };
+            };
             
         }
     }
