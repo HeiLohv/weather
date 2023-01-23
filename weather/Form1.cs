@@ -71,11 +71,11 @@ namespace weather
 
             }
         }
-        DateTime convertDateTime(long millisec)
+        DateTime convertDateTime(long sec)
         {
             //Förvandlar till aktuell tid
             DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
-            day = day.AddMilliseconds(millisec).ToLocalTime();
+            day = day.AddSeconds(sec).ToLocalTime();
 
             return day;
         }
