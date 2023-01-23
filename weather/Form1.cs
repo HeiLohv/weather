@@ -55,8 +55,8 @@ namespace weather
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
 
-                labelSunrise.Text = Info.sys.sunrise.ToString();
-                labelSunset.Text = Info.sys.sunset.ToString();
+                labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
+                labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
 
                 labelHumidity.Text = Info.main.humidity.ToString();
                 labelPressure.Text = Info.main.pressure.ToString();
@@ -71,11 +71,13 @@ namespace weather
 
             }
         }
-        //DateTime convertDateTime(long millisec)
-        //{
-        // DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
-        //day = day.AddMilliseconds(millisec).ToLocalTime();
-        //}
+        DateTime convertDateTime(long millisec)
+        {
+            DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
+            day = day.AddMilliseconds(millisec).ToLocalTime();
+
+            return day;
+        }
 
         private void buttonGet_Click(object sender, EventArgs e)
         {
@@ -127,8 +129,8 @@ namespace weather
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
 
-                labelSunrise.Text = Info.sys.sunrise.ToString();
-                labelSunset.Text = Info.sys.sunset.ToString();
+                labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
+                labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
 
                 labelHumidity.Text = Info.main.humidity.ToString();
                 labelPressure.Text = Info.main.pressure.ToString();
