@@ -130,7 +130,7 @@ namespace weather
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
-                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/04d.png" + Info.weather[0].icon + ".png";
+                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
 
@@ -261,6 +261,11 @@ namespace weather
                 var json = web.DownloadString(url);
                 weatherForecast.List forecastInfo = JsonConvert.DeserializeObject<weatherForecast.List>(json);
 
+                //flowLayoutPanelForecast fLPF;
+                //for (int i = 0; i < 5; i++){
+                //    fLPF = new flowLayoutPanelForecast();
+                //    fLPF.pictureBoxIcon.ImageLocation = "" + forecastInfo.Weather[i];
+                //}
             }
         }
     }

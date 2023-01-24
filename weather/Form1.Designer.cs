@@ -60,6 +60,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonReadFile = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.flowLayoutPanelForecast = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,9 +130,9 @@
             // 
             // pictureBoxIcon
             // 
-            this.pictureBoxIcon.Location = new System.Drawing.Point(442, 175);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(441, 185);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(88, 86);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(75, 67);
             this.pictureBoxIcon.TabIndex = 6;
             this.pictureBoxIcon.TabStop = false;
             // 
@@ -417,12 +418,20 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // flowLayoutPanelForecast
+            // 
+            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(57, 427);
+            this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(721, 146);
+            this.flowLayoutPanelForecast.TabIndex = 34;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(190)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(869, 452);
+            this.ClientSize = new System.Drawing.Size(863, 616);
+            this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonReadFile);
             this.Controls.Add(this.buttonDelete);
@@ -498,6 +507,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonReadFile;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelForecast;
     }
 }
 
