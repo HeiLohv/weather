@@ -259,6 +259,7 @@ namespace weather
             {
                 string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
                 var json = web.DownloadString(url);
+                weatherForecast.List forecastInfo = JsonConvert.DeserializeObject<weatherForecast.List>(json);
 
             }
         }

@@ -2,12 +2,6 @@
 
 public class weatherForecast
 {
-    public class Daily
-    {
-        public long dt { get; set; }
-        public temp temp { get; set; }
-        public List<Weather> weather { get; set; }
-    }
 
     public class Rootobject
     {
