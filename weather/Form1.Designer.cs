@@ -311,7 +311,7 @@
             // 
             this.labelError.AutoSize = true;
             this.labelError.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelError.Location = new System.Drawing.Point(473, 123);
+            this.labelError.Location = new System.Drawing.Point(473, 121);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(35, 13);
             this.labelError.TabIndex = 25;

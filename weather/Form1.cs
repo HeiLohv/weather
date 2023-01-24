@@ -41,6 +41,8 @@ namespace weather
 
         }
 
+        double lon;
+        double lat;
         void getWeather()
         {
 
@@ -68,7 +70,8 @@ namespace weather
                 labelMaxTemp.Text = Info.main.temp_max.ToString();
                 labelFeels.Text = Info.main.feels_like.ToString();
 
-
+                lon = Info.coord.lon;
+                lat = Info.coord.lat;
             }
         }
         DateTime convertDateTime(long sec)
@@ -79,6 +82,7 @@ namespace weather
 
             return day;
         }
+
 
         private void buttonGet_Click(object sender, EventArgs e)
         {
@@ -192,6 +196,7 @@ namespace weather
                 else
                 {
                     //Meddelandet stängs   
+
                 }
             };
             
@@ -244,6 +249,18 @@ namespace weather
         private void labelFeels_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+        void getForecast()
+        {
+            //Tar fram data om platsen som skrivits i sökfältet
+            using (WebClient web = new WebClient())
+            {
+                string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
+                var json = web.DownloadString(url);
+
+            }
         }
     }
 }
