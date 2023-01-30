@@ -1,6 +1,6 @@
 ﻿namespace weather
 {
-    partial class Forecast
+    partial class ForecastUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.labelDateTime = new System.Windows.Forms.Label();
             this.labelWeather = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelTemp = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxIcon
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxIcon.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(77, 78);
+            this.pictureBoxIcon.TabIndex = 0;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // labelDateTime
             // 
@@ -84,7 +84,7 @@
             this.labelTemp.TabIndex = 4;
             this.labelTemp.Text = "label1";
             // 
-            // Forecast
+            // ForecastUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,10 +92,11 @@
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelWeather);
             this.Controls.Add(this.labelDateTime);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Forecast";
-            this.Size = new System.Drawing.Size(466, 110);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.Add(this.pictureBoxIcon);
+            this.Name = "ForecastUC";
+            this.Size = new System.Drawing.Size(292, 105);
+            this.Load += new System.EventHandler(this.Forecast_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,7 +104,7 @@
 
         #endregion
 
-        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBoxIcon;
         public System.Windows.Forms.Label labelDateTime;
         public System.Windows.Forms.Label labelWeather;
         public System.Windows.Forms.Label labelDescription;

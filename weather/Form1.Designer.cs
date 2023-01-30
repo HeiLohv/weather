@@ -130,7 +130,7 @@
             // 
             // pictureBoxIcon
             // 
-            this.pictureBoxIcon.Location = new System.Drawing.Point(441, 185);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(444, 188);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(75, 67);
             this.pictureBoxIcon.TabIndex = 6;
