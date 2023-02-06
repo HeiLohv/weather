@@ -2,7 +2,7 @@
   "cod": "200",
   "message": 0,
   "cnt": 40,
-  "list": [
+  "daily": [
     {
       "dt": 1674561600,
       "main": {

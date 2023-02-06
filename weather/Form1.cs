@@ -19,7 +19,9 @@ namespace weather
         string apiKey = "168d1666fa09c5fdf5a98128f6ad20a4";
 
         string file;
+        
 
+        
 
         public Form1()
         {
@@ -43,6 +45,14 @@ namespace weather
 
         double lon;
         double lat;
+
+        void showLabels()
+        {
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels };
+
+            foreach (var label in labels)
+                label.Visible = true;
+        }
         void getWeather()
         {
 
@@ -88,18 +98,7 @@ namespace weather
         {
             //Visar upp information om vädret
             getWeather();
-            labelWeather.Visible = true;
-            labelDescription.Visible = true;
-            labelSunrise.Visible = true;
-            labelSunset.Visible = true;
-            labelHumidity.Visible = true;
-            labelPressure.Visible = true;
-            labelWindSpeed.Visible = true;
-            labelTemperature.Visible = true;
-            labelMinTemp.Visible = true;
-            labelMaxTemp.Visible = true;
-            labelFeelsLike.Visible = true;
-            labelFeels.Visible = true;
+            showLabels();
         }
 
         private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
@@ -155,18 +154,7 @@ namespace weather
         {
             //Visar upp information om vädret
             showWeather();
-            labelWeather.Visible = true;
-            labelDescription.Visible = true;
-            labelSunrise.Visible = true;
-            labelSunset.Visible = true;
-            labelHumidity.Visible = true;
-            labelPressure.Visible = true;
-            labelWindSpeed.Visible = true;
-            labelTemperature.Visible = true;
-            labelMinTemp.Visible = true;
-            labelMaxTemp.Visible = true;
-            labelFeelsLike.Visible = true;
-            labelFeels.Visible = true;
+            showLabels();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -255,24 +243,24 @@ namespace weather
         void getForecast()
         {
             //Tar fram väderprognosdata om platsen som skrivits i sökfältet
-            using (WebClient web = new WebClient())
-            {
-                string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
-                var json = web.DownloadString(url);
-                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+            //using (WebClient web = new WebClient())
+            //{
+            //    string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
+            //    var json = web.DownloadString(url);
+            //    weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
-                ForecastUC fuc;
-                for (int i = 0; i < 8; i++){
-                    fuc = new ForecastUC();
-                    fuc.pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.List[i].weather[0].icon + ".png";
-                    fuc.labelTemp.Text = forecastInfo.list[i].list[0].temp;
-                    fuc.labelWeather.Text = forecastInfo.list[i].Weather[0].main;
-                    fuc.labelDescription.Text = forecastInfo.list[i].weather[0].description;
-                    fuc.labelDateTime.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString;
+            //    ForecastUC fuc;
+            //    for (int i = 0; i < 8; i++){
+            //        fuc = new ForecastUC();
+            //        fuc.pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
+            //        fuc.labelTemp.Text = forecastInfo.list[i].list[0].temp;
+            //        fuc.labelWeather.Text = forecastInfo.list[i].Weather[0].main;
+            //        fuc.labelDescription.Text = forecastInfo.list[i].weather[0].description;
+            //        fuc.labelDateTime.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString;
 
-                    flowLayoutPanelForecast.Controls.Add(fuc);
-                }
-            }
+            //        flowLayoutPanelForecast.Controls.Add(fuc);
+            //      }
+            //}
         }
     }
 }
