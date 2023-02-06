@@ -50,6 +50,7 @@ namespace weather
         {
             var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels };
 
+            //Gör texter synliga
             foreach (var label in labels)
                 label.Visible = true;
         }
@@ -97,8 +98,15 @@ namespace weather
         private void buttonGet_Click(object sender, EventArgs e)
         {
             //Visar upp information om vädret
-            getWeather();
-            showLabels();
+            try
+            {
+                getWeather();
+                showLabels();
+            }
+            catch
+            {
+                labelError.Text = "Invalid search";
+            }
         }
 
         private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
@@ -153,8 +161,15 @@ namespace weather
         private void buttonShow_Click(object sender, EventArgs e)
         {
             //Visar upp information om vädret
-            showWeather();
-            showLabels();
+            try
+            {
+                showWeather();
+                showLabels();
+            }
+            catch
+            {
+                labelError.Text = "Invalid search";
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -243,24 +258,25 @@ namespace weather
         void getForecast()
         {
             //Tar fram väderprognosdata om platsen som skrivits i sökfältet
-            //using (WebClient web = new WebClient())
-            //{
-            //    string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
-            //    var json = web.DownloadString(url);
-            //    weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+            using (WebClient web = new WebClient())
+            {
+                string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
+                var json = web.DownloadString(url);
+                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
-            //    ForecastUC fuc;
-            //    for (int i = 0; i < 8; i++){
-            //        fuc = new ForecastUC();
-            //        fuc.pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
-            //        fuc.labelTemp.Text = forecastInfo.list[i].list[0].temp;
-            //        fuc.labelWeather.Text = forecastInfo.list[i].Weather[0].main;
-            //        fuc.labelDescription.Text = forecastInfo.list[i].weather[0].description;
-            //        fuc.labelDateTime.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString;
+                ForecastUC fuc;
+                for (int i = 0; i < 8; i++)
+                {
+                    fuc = new ForecastUC();
+                    fuc.pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
+                    fuc.labelTemp.Text = forecastInfo.list[i].list[0].temp;
+                    fuc.labelWeather.Text = forecastInfo.list[i].Weather[0].main;
+                    fuc.labelDescription.Text = forecastInfo.list[i].weather[0].description;
+                    fuc.labelDateTime.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString;
 
-            //        flowLayoutPanelForecast.Controls.Add(fuc);
-            //      }
-            //}
+                    flowLayoutPanelForecast.Controls.Add(fuc);
+                }
+            }
         }
     }
 }
