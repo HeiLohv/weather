@@ -106,6 +106,7 @@ namespace weather
             catch
             {
                 labelError.Text = "Invalid search";
+                labelError.Visible = true;
             }
         }
 
@@ -169,6 +170,7 @@ namespace weather
             catch
             {
                 labelError.Text = "Invalid search";
+                labelError.Visible = true;
             }
         }
 
