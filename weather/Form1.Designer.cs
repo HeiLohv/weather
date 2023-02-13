@@ -224,7 +224,7 @@
             // 
             this.labelWindSpeed.AutoSize = true;
             this.labelWindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWindSpeed.Location = new System.Drawing.Point(693, 322);
+            this.labelWindSpeed.Location = new System.Drawing.Point(686, 322);
             this.labelWindSpeed.Name = "labelWindSpeed";
             this.labelWindSpeed.Size = new System.Drawing.Size(51, 20);
             this.labelWindSpeed.TabIndex = 15;
@@ -420,10 +420,12 @@
             // 
             // flowLayoutPanelForecast
             // 
+            this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanelForecast.Location = new System.Drawing.Point(57, 427);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
             this.flowLayoutPanelForecast.Size = new System.Drawing.Size(721, 146);
             this.flowLayoutPanelForecast.TabIndex = 34;
+            this.flowLayoutPanelForecast.WrapContents = false;
             // 
             // Form1
             // 

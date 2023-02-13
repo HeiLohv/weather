@@ -1,29 +1,32 @@
 ﻿using System;
 
-class weatherForecast
+namespace weather
 {
-    public class daily
+    public class weatherForecast
     {
-        public long dt { get; set; }
-        public temp temp { get; set; }
-        public List<Weather> weather { get; set; }
+        public list<list> list { get; set; }
     }
 
-    public class Temp
+    public class temp
     {
         public double day { get; set; }
     }
 
-    public class Weather
+    public class weather
     {
         public string main { get; set; }
         public string description { get; set; }
         public string icon { get; set; }
+        public list<list> list { get; set; }
     }
 
-    public class forecastInfo
+    public class list
     {
-        public List<daily> daily { get; set; }
+        public double dt { get; set; }
+        public temp temp { get; set; }
+        public List<weather> weather { get; set; }
     }
+
+
 
 }

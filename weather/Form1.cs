@@ -19,9 +19,6 @@ namespace weather
         string apiKey = "168d1666fa09c5fdf5a98128f6ad20a4";
 
         string file;
-        
-
-        
 
         public Form1()
         {
@@ -64,7 +61,7 @@ namespace weather
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
-                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/04d.png" + Info.weather[0].icon + ".png";
+                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
 
@@ -102,9 +99,12 @@ namespace weather
             {
                 getWeather();
                 showLabels();
+                getForecast();
+                labelError.Text = "";
             }
             catch
             {
+                //Felmeddelande 
                 labelError.Text = "Invalid search";
                 labelError.Visible = true;
             }
@@ -166,9 +166,12 @@ namespace weather
             {
                 showWeather();
                 showLabels();
+                getForecast();
+                labelError.Text = "";
             }
             catch
             {
+                //Felmeddelande 
                 labelError.Text = "Invalid search";
                 labelError.Visible = true;
             }
@@ -188,7 +191,8 @@ namespace weather
             {
                 var itemNotSelected = MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
             }
-            else {
+            else
+            {
 
                 //Frågar om man vill ta bort den valda posten 
                 var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
@@ -204,7 +208,7 @@ namespace weather
 
                 }
             };
-            
+
         }
 
         private void buttonReadFile_Click(object sender, EventArgs e)
@@ -225,7 +229,7 @@ namespace weather
             }
             else
             {
-                MessageBox.Show("Couldn't find this file.", "Error");
+                MessageBox.Show("Couldn't find file.", "Error");
             }
         }
 
@@ -256,7 +260,7 @@ namespace weather
 
         }
 
-        
+
         void getForecast()
         {
             //Tar fram väderprognosdata om platsen som skrivits i sökfältet
@@ -264,17 +268,17 @@ namespace weather
             {
                 string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
                 var json = web.DownloadString(url);
-                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+                weatherForecast.forecastInfo forecsastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 ForecastUC fuc;
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     fuc = new ForecastUC();
-                    fuc.pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
-                    fuc.labelTemp.Text = forecastInfo.list[i].list[0].temp;
-                    fuc.labelWeather.Text = forecastInfo.list[i].Weather[0].main;
-                    fuc.labelDescription.Text = forecastInfo.list[i].weather[0].description;
-                    fuc.labelDateTime.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString;
+                    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecsastInfo.list[i].weather[0].icon + ".png";
+                    //fuc.labelTempFuc.Text = forecsastInfo.list[i].temp;
+                    fuc.labelWeatherFuc.Text = forecsastInfo.list[i].weather[0].main;
+                    fuc.labelDescriptionFuc.Text = forecsastInfo.list[i].weather[0].description;
+                    fuc.labelDateTimeFuc.Text = convertDateTime(forecsastInfo.list[i].dt).DayOfWeek.ToString();
 
                     flowLayoutPanelForecast.Controls.Add(fuc);
                 }
