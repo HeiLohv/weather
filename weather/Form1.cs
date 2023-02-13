@@ -275,9 +275,8 @@ namespace weather
                 {
                     fuc = new ForecastUC();
                     fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecsastInfo.list[i].weather[0].icon + ".png";
-                    //fuc.labelTempFuc.Text = forecsastInfo.list[i].temp;
+                    fuc.labelTempFuc.Text = string.Format(forecsastInfo.list[i].temp);
                     fuc.labelWeatherFuc.Text = forecsastInfo.list[i].weather[0].main;
-                    fuc.labelDescriptionFuc.Text = forecsastInfo.list[i].weather[0].description;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecsastInfo.list[i].dt).DayOfWeek.ToString();
 
                     flowLayoutPanelForecast.Controls.Add(fuc);
