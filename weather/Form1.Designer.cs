@@ -151,7 +151,7 @@
             // 
             this.labelWindSpeedText.AutoSize = true;
             this.labelWindSpeedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWindSpeedText.Location = new System.Drawing.Point(586, 322);
+            this.labelWindSpeedText.Location = new System.Drawing.Point(594, 322);
             this.labelWindSpeedText.Name = "labelWindSpeedText";
             this.labelWindSpeedText.Size = new System.Drawing.Size(101, 20);
             this.labelWindSpeedText.TabIndex = 8;
@@ -161,7 +161,7 @@
             // 
             this.labelHumidityText.AutoSize = true;
             this.labelHumidityText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHumidityText.Location = new System.Drawing.Point(586, 293);
+            this.labelHumidityText.Location = new System.Drawing.Point(594, 293);
             this.labelHumidityText.Name = "labelHumidityText";
             this.labelHumidityText.Size = new System.Drawing.Size(74, 20);
             this.labelHumidityText.TabIndex = 9;
@@ -171,7 +171,7 @@
             // 
             this.labelHumidity.AutoSize = true;
             this.labelHumidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHumidity.Location = new System.Drawing.Point(666, 293);
+            this.labelHumidity.Location = new System.Drawing.Point(674, 293);
             this.labelHumidity.Name = "labelHumidity";
             this.labelHumidity.Size = new System.Drawing.Size(51, 20);
             this.labelHumidity.TabIndex = 10;
@@ -224,7 +224,7 @@
             // 
             this.labelWindSpeed.AutoSize = true;
             this.labelWindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWindSpeed.Location = new System.Drawing.Point(686, 322);
+            this.labelWindSpeed.Location = new System.Drawing.Point(694, 322);
             this.labelWindSpeed.Name = "labelWindSpeed";
             this.labelWindSpeed.Size = new System.Drawing.Size(51, 20);
             this.labelWindSpeed.TabIndex = 15;
@@ -235,7 +235,7 @@
             // 
             this.labelPressureText.AutoSize = true;
             this.labelPressureText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPressureText.Location = new System.Drawing.Point(586, 351);
+            this.labelPressureText.Location = new System.Drawing.Point(594, 351);
             this.labelPressureText.Name = "labelPressureText";
             this.labelPressureText.Size = new System.Drawing.Size(76, 20);
             this.labelPressureText.TabIndex = 18;
@@ -245,7 +245,7 @@
             // 
             this.labelPressure.AutoSize = true;
             this.labelPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPressure.Location = new System.Drawing.Point(668, 351);
+            this.labelPressure.Location = new System.Drawing.Point(676, 351);
             this.labelPressure.Name = "labelPressure";
             this.labelPressure.Size = new System.Drawing.Size(51, 20);
             this.labelPressure.TabIndex = 19;
@@ -256,7 +256,7 @@
             // 
             this.labelSunriseText.AutoSize = true;
             this.labelSunriseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunriseText.Location = new System.Drawing.Point(586, 212);
+            this.labelSunriseText.Location = new System.Drawing.Point(594, 212);
             this.labelSunriseText.Name = "labelSunriseText";
             this.labelSunriseText.Size = new System.Drawing.Size(67, 20);
             this.labelSunriseText.TabIndex = 20;
@@ -266,7 +266,7 @@
             // 
             this.labelSunsetText.AutoSize = true;
             this.labelSunsetText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunsetText.Location = new System.Drawing.Point(586, 241);
+            this.labelSunsetText.Location = new System.Drawing.Point(594, 241);
             this.labelSunsetText.Name = "labelSunsetText";
             this.labelSunsetText.Size = new System.Drawing.Size(64, 20);
             this.labelSunsetText.TabIndex = 21;
@@ -276,7 +276,7 @@
             // 
             this.labelSunrise.AutoSize = true;
             this.labelSunrise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunrise.Location = new System.Drawing.Point(659, 212);
+            this.labelSunrise.Location = new System.Drawing.Point(667, 212);
             this.labelSunrise.Name = "labelSunrise";
             this.labelSunrise.Size = new System.Drawing.Size(51, 20);
             this.labelSunrise.TabIndex = 22;
@@ -287,7 +287,7 @@
             // 
             this.labelSunset.AutoSize = true;
             this.labelSunset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunset.Location = new System.Drawing.Point(656, 241);
+            this.labelSunset.Location = new System.Drawing.Point(664, 241);
             this.labelSunset.Name = "labelSunset";
             this.labelSunset.Size = new System.Drawing.Size(51, 20);
             this.labelSunset.TabIndex = 23;
@@ -420,10 +420,11 @@
             // 
             // flowLayoutPanelForecast
             // 
+            this.flowLayoutPanelForecast.AutoScroll = true;
             this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(57, 427);
+            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(24, 414);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
-            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(721, 146);
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(813, 123);
             this.flowLayoutPanelForecast.TabIndex = 34;
             this.flowLayoutPanelForecast.WrapContents = false;
             // 
@@ -432,7 +433,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(190)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(863, 616);
+            this.ClientSize = new System.Drawing.Size(863, 557);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonReadFile);

@@ -83,7 +83,7 @@
             this.Controls.Add(this.labelDateTimeFuc);
             this.Controls.Add(this.pictureBoxIconFuc);
             this.Name = "ForecastUC";
-            this.Size = new System.Drawing.Size(173, 81);
+            this.Size = new System.Drawing.Size(197, 81);
             this.Load += new System.EventHandler(this.Forecast_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconFuc)).EndInit();
             this.ResumeLayout(false);

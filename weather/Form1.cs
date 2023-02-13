@@ -266,12 +266,12 @@ namespace weather
             //Tar fram väderprognosdata om platsen som skrivits i sökfältet
             using (WebClient web = new WebClient())
             {
-                string url = string.Format("api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
+                string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
                 var json = web.DownloadString(url);
                 weatherForecast.forecastInfo forecsastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 ForecastUC fuc;
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 30; i++)
                 {
                     fuc = new ForecastUC();
                     fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecsastInfo.list[i].weather[0].icon + ".png";
