@@ -57,7 +57,7 @@ namespace weather
             //Tar fram data om platsen som skrivits i sökfältet
             using (WebClient web = new WebClient())
             {
-                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", textBoxSearch_TextChanged.Text, apiKey);
+                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric", textBoxSearch_TextChanged.Text, apiKey);
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
@@ -73,10 +73,10 @@ namespace weather
 
                 labelWindSpeed.Text = Info.wind.speed.ToString();
 
-                labelTemperature.Text = Info.main.temp.ToString();
-                labelMinTemp.Text = Info.main.temp_min.ToString();
-                labelMaxTemp.Text = Info.main.temp_max.ToString();
-                labelFeels.Text = Info.main.feels_like.ToString();
+                labelTemperature.Text = Info.main.temp.ToString() + "°C";
+                labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
+                labelMaxTemp.Text = Info.main.temp_max.ToString() + "°C";
+                labelFeels.Text = Info.main.feels_like.ToString() + "°C";
 
                 labelDateTime.Text = convertDateTime(Info.dt).ToString();
 
@@ -107,7 +107,7 @@ namespace weather
             catch
             {
                 //Felmeddelande 
-                labelError.Text = "Invalid search";
+                labelError.Text = "Error";
                 labelError.Visible = true;
             }
         }
@@ -136,7 +136,7 @@ namespace weather
             using (WebClient web = new WebClient())
             {
                 //Tar fram data om vald plats i listan
-                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", selected, apiKey);
+                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric", selected, apiKey);
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
@@ -152,13 +152,12 @@ namespace weather
 
                 labelWindSpeed.Text = Info.wind.speed.ToString();
 
-                labelTemperature.Text = Info.main.temp.ToString();
-                labelMinTemp.Text = Info.main.temp_min.ToString();
-                labelMaxTemp.Text = Info.main.temp_max.ToString();
-                labelFeels.Text = Info.main.feels_like.ToString();
+                labelTemperature.Text = Info.main.temp.ToString() + "°C";
+                labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
+                labelMaxTemp.Text = Info.main.temp_max.ToString() + "°C";
+                labelFeels.Text = Info.main.feels_like.ToString() + "°C";
 
                 labelDateTime.Text = convertDateTime(Info.dt).ToString();
-
 
             }
         }
@@ -226,9 +225,9 @@ namespace weather
                 {
                     listBoxList.Items.Add(line);
                 }
+                Textfile.Close();
 
                 //Stänger filen
-                Textfile.Close();
             }
             else
             {
