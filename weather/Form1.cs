@@ -45,7 +45,7 @@ namespace weather
 
         void showLabels()
         {
-            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels };
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime };
 
             //Gör texter synliga
             foreach (var label in labels)
@@ -77,6 +77,8 @@ namespace weather
                 labelMinTemp.Text = Info.main.temp_min.ToString();
                 labelMaxTemp.Text = Info.main.temp_max.ToString();
                 labelFeels.Text = Info.main.feels_like.ToString();
+
+                labelDateTime.Text = convertDateTime(Info.dt).ToString();
 
                 lon = Info.coord.lon;
                 lat = Info.coord.lat;
@@ -155,6 +157,8 @@ namespace weather
                 labelMaxTemp.Text = Info.main.temp_max.ToString();
                 labelFeels.Text = Info.main.feels_like.ToString();
 
+                labelDateTime.Text = convertDateTime(Info.dt).ToString();
+
 
             }
         }
@@ -167,12 +171,11 @@ namespace weather
                 showWeather();
                 showLabels();
                 getForecast();
-                labelError.Text = "";
             }
             catch
             {
                 //Felmeddelande 
-                labelError.Text = "Invalid search";
+                labelError.Text = "Error";
                 labelError.Visible = true;
             }
         }
@@ -275,13 +278,18 @@ namespace weather
                 {
                     fuc = new ForecastUC();
                     fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecsastInfo.list[i].weather[0].icon + ".png";
-                    fuc.labelTempFuc.Text = string.Format(forecsastInfo.list[i].temp);
+                    //fuc.labelTempFuc.Text = string.Format(forecsastInfo.list[i].temp);
                     fuc.labelWeatherFuc.Text = forecsastInfo.list[i].weather[0].main;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecsastInfo.list[i].dt).DayOfWeek.ToString();
 
                     flowLayoutPanelForecast.Controls.Add(fuc);
                 }
             }
+        }
+
+        private void labelDateTime_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

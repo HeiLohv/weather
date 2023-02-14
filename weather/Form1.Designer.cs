@@ -32,8 +32,7 @@
             this.labelLocationSearch = new System.Windows.Forms.Label();
             this.textBoxSearch_TextChanged = new System.Windows.Forms.TextBox();
             this.labelWeather = new System.Windows.Forms.Label();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
+            this.labelDateTime = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelWindSpeedText = new System.Windows.Forms.Label();
@@ -68,7 +67,7 @@
             // 
             this.labelTemperature.AutoSize = true;
             this.labelTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTemperature.Location = new System.Drawing.Point(343, 166);
+            this.labelTemperature.Location = new System.Drawing.Point(344, 162);
             this.labelTemperature.Name = "labelTemperature";
             this.labelTemperature.Size = new System.Drawing.Size(86, 31);
             this.labelTemperature.TabIndex = 0;
@@ -108,25 +107,17 @@
             this.labelWeather.Visible = false;
             this.labelWeather.Click += new System.EventHandler(this.labelWeather_Click);
             // 
-            // labelDate
+            // labelDateTime
             // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(619, 112);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(51, 20);
-            this.labelDate.TabIndex = 4;
-            this.labelDate.Text = "label1";
-            // 
-            // labelTime
-            // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTime.Location = new System.Drawing.Point(619, 134);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(51, 20);
-            this.labelTime.TabIndex = 5;
-            this.labelTime.Text = "label1";
+            this.labelDateTime.AutoSize = true;
+            this.labelDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateTime.Location = new System.Drawing.Point(584, 162);
+            this.labelDateTime.Name = "labelDateTime";
+            this.labelDateTime.Size = new System.Drawing.Size(86, 31);
+            this.labelDateTime.TabIndex = 4;
+            this.labelDateTime.Text = "label1";
+            this.labelDateTime.Visible = false;
+            this.labelDateTime.Click += new System.EventHandler(this.labelDateTime_Click);
             // 
             // pictureBoxIcon
             // 
@@ -461,8 +452,7 @@
             this.Controls.Add(this.labelWindSpeedText);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.pictureBoxIcon);
-            this.Controls.Add(this.labelTime);
-            this.Controls.Add(this.labelDate);
+            this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.labelWeather);
             this.Controls.Add(this.textBoxSearch_TextChanged);
             this.Controls.Add(this.labelLocationSearch);
@@ -482,8 +472,7 @@
         private System.Windows.Forms.Label labelLocationSearch;
         private System.Windows.Forms.TextBox textBoxSearch_TextChanged;
         private System.Windows.Forms.Label labelWeather;
-        private System.Windows.Forms.Label labelDate;
-        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelDateTime;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelWindSpeedText;
