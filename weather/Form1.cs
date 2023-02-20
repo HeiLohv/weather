@@ -45,7 +45,7 @@ namespace weather
 
         void showLabels()
         {
-            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime };
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelDateTimeForecast, labelWeatherForecast, labelTempForecast};
 
             //Gör texter synliga
             foreach (var label in labels)
@@ -61,6 +61,7 @@ namespace weather
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
+                //Sätter in data i kontroller
                 pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
@@ -140,6 +141,7 @@ namespace weather
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
+                //Sätter in data i kontroller
                 pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
                 labelWeather.Text = Info.weather[0].main;
                 labelDescription.Text = Info.weather[0].description;
@@ -265,24 +267,34 @@ namespace weather
 
         void getForecast()
         {
-            //Tar fram väderprognosdata om platsen som skrivits i sökfältet
+            //Kod som tar fram väderprognosdata om plats
             using (WebClient web = new WebClient())
             {
-                string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}", lat, lon, apiKey);
+                int day = 5;
+                string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&cnt={3}&units=metric&exclude-current,minutely,hourly", lat, lon, apiKey, day);
                 var json = web.DownloadString(url);
-                weatherForecast.forecastInfo forecsastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
-                ForecastUC fuc;
-                for (int i = 0; i < 30; i++)
-                {
-                    fuc = new ForecastUC();
-                    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecsastInfo.list[i].weather[0].icon + ".png";
-                    //fuc.labelTempFuc.Text = string.Format(forecsastInfo.list[i].temp);
-                    fuc.labelWeatherFuc.Text = forecsastInfo.list[i].weather[0].main;
-                    fuc.labelDateTimeFuc.Text = convertDateTime(forecsastInfo.list[i].dt).DayOfWeek.ToString();
+                //Sätter in data i kontroller
+                pictureBoxIconForecast.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[1].weather[0].icon + ".png";
+                labelWeatherForecast.Text = string.Format("{0}", forecastInfo.list[1].weather[0].main);
+                labelDateTimeForecast.Text = string.Format(convertDateTime(forecastInfo.list[1].dt).DayOfWeek.ToString());
+                labelTempForecast.Text = string.Format("{0}", forecastInfo.list[1].temp.ToString() + "°C");
 
-                    flowLayoutPanelForecast.Controls.Add(fuc);
-                }
+                //ForecastUC fuc;
+
+
+                //for (int i = 0; i < 30; i++)
+                //{
+                //    fuc = new ForecastUC();
+                //    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
+                //    fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
+                //    fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
+                //    fuc.labelTempFuc.Text = forecastInfo.list[i].temp.ToString() + "°C";
+
+                //    //Sätter in i flowLayoutPanel-kontroll
+                //    flowLayoutPanelForecast.Controls.Add(fuc);
+                //}
             }
         }
 

@@ -60,7 +60,12 @@
             this.buttonReadFile = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanelForecast = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelTempForecast = new System.Windows.Forms.Label();
+            this.labelWeatherForecast = new System.Windows.Forms.Label();
+            this.labelDateTimeForecast = new System.Windows.Forms.Label();
+            this.pictureBoxIconForecast = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconForecast)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTemperature
@@ -79,7 +84,7 @@
             this.labelLocationSearch.AutoSize = true;
             this.labelLocationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocationSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelLocationSearch.Location = new System.Drawing.Point(343, 57);
+            this.labelLocationSearch.Location = new System.Drawing.Point(347, 57);
             this.labelLocationSearch.Name = "labelLocationSearch";
             this.labelLocationSearch.Size = new System.Drawing.Size(74, 20);
             this.labelLocationSearch.TabIndex = 1;
@@ -89,7 +94,7 @@
             // textBoxSearch_TextChanged
             // 
             this.textBoxSearch_TextChanged.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(417, 57);
+            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(421, 57);
             this.textBoxSearch_TextChanged.Name = "textBoxSearch_TextChanged";
             this.textBoxSearch_TextChanged.Size = new System.Drawing.Size(175, 20);
             this.textBoxSearch_TextChanged.TabIndex = 2;
@@ -121,9 +126,9 @@
             // 
             // pictureBoxIcon
             // 
-            this.pictureBoxIcon.Location = new System.Drawing.Point(438, 179);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(472, 191);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(75, 67);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(48, 44);
             this.pictureBoxIcon.TabIndex = 6;
             this.pictureBoxIcon.TabStop = false;
             // 
@@ -291,7 +296,7 @@
             this.buttonGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonGet.Location = new System.Drawing.Point(417, 84);
+            this.buttonGet.Location = new System.Drawing.Point(421, 84);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(56, 22);
             this.buttonGet.TabIndex = 24;
@@ -303,7 +308,7 @@
             // 
             this.labelError.AutoSize = true;
             this.labelError.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelError.Location = new System.Drawing.Point(465, 121);
+            this.labelError.Location = new System.Drawing.Point(469, 121);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(35, 13);
             this.labelError.TabIndex = 25;
@@ -353,7 +358,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAdd.Location = new System.Drawing.Point(479, 84);
+            this.buttonAdd.Location = new System.Drawing.Point(483, 84);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(71, 22);
             this.buttonAdd.TabIndex = 29;
@@ -391,7 +396,7 @@
             this.buttonReadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonReadFile.Location = new System.Drawing.Point(214, 182);
             this.buttonReadFile.Name = "buttonReadFile";
-            this.buttonReadFile.Size = new System.Drawing.Size(71, 22);
+            this.buttonReadFile.Size = new System.Drawing.Size(60, 22);
             this.buttonReadFile.TabIndex = 32;
             this.buttonReadFile.Text = "Read file";
             this.buttonReadFile.UseVisualStyleBackColor = false;
@@ -403,9 +408,9 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSave.Location = new System.Drawing.Point(214, 145);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(72, 22);
+            this.buttonSave.Size = new System.Drawing.Size(60, 22);
             this.buttonSave.TabIndex = 33;
-            this.buttonSave.Text = "Save to file";
+            this.buttonSave.Text = "Save ";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
@@ -419,12 +424,57 @@
             this.flowLayoutPanelForecast.TabIndex = 34;
             this.flowLayoutPanelForecast.WrapContents = false;
             // 
+            // labelTempForecast
+            // 
+            this.labelTempForecast.AutoSize = true;
+            this.labelTempForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTempForecast.Location = new System.Drawing.Point(97, 572);
+            this.labelTempForecast.Name = "labelTempForecast";
+            this.labelTempForecast.Size = new System.Drawing.Size(51, 20);
+            this.labelTempForecast.TabIndex = 38;
+            this.labelTempForecast.Text = "label1";
+            this.labelTempForecast.Visible = false;
+            // 
+            // labelWeatherForecast
+            // 
+            this.labelWeatherForecast.AutoSize = true;
+            this.labelWeatherForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWeatherForecast.Location = new System.Drawing.Point(97, 612);
+            this.labelWeatherForecast.Name = "labelWeatherForecast";
+            this.labelWeatherForecast.Size = new System.Drawing.Size(51, 20);
+            this.labelWeatherForecast.TabIndex = 37;
+            this.labelWeatherForecast.Text = "label1";
+            this.labelWeatherForecast.Visible = false;
+            // 
+            // labelDateTimeForecast
+            // 
+            this.labelDateTimeForecast.AutoSize = true;
+            this.labelDateTimeForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateTimeForecast.Location = new System.Drawing.Point(97, 592);
+            this.labelDateTimeForecast.Name = "labelDateTimeForecast";
+            this.labelDateTimeForecast.Size = new System.Drawing.Size(51, 20);
+            this.labelDateTimeForecast.TabIndex = 36;
+            this.labelDateTimeForecast.Text = "label1";
+            this.labelDateTimeForecast.Visible = false;
+            // 
+            // pictureBoxIconForecast
+            // 
+            this.pictureBoxIconForecast.Location = new System.Drawing.Point(36, 572);
+            this.pictureBoxIconForecast.Name = "pictureBoxIconForecast";
+            this.pictureBoxIconForecast.Size = new System.Drawing.Size(55, 52);
+            this.pictureBoxIconForecast.TabIndex = 35;
+            this.pictureBoxIconForecast.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(863, 557);
+            this.ClientSize = new System.Drawing.Size(863, 663);
+            this.Controls.Add(this.labelTempForecast);
+            this.Controls.Add(this.labelWeatherForecast);
+            this.Controls.Add(this.labelDateTimeForecast);
+            this.Controls.Add(this.pictureBoxIconForecast);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonReadFile);
@@ -461,6 +511,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconForecast)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,6 +551,10 @@
         private System.Windows.Forms.Button buttonReadFile;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelForecast;
+        public System.Windows.Forms.Label labelTempForecast;
+        public System.Windows.Forms.Label labelWeatherForecast;
+        public System.Windows.Forms.Label labelDateTimeForecast;
+        public System.Windows.Forms.PictureBox pictureBoxIconForecast;
     }
 }
 
