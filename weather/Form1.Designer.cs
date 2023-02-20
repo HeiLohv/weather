@@ -50,7 +50,6 @@
             this.labelSunrise = new System.Windows.Forms.Label();
             this.labelSunset = new System.Windows.Forms.Label();
             this.buttonGet = new System.Windows.Forms.Button();
-            this.labelError = new System.Windows.Forms.Label();
             this.labelFeelsLike = new System.Windows.Forms.Label();
             this.labelFeels = new System.Windows.Forms.Label();
             this.listBoxList = new System.Windows.Forms.ListBox();
@@ -304,18 +303,6 @@
             this.buttonGet.UseVisualStyleBackColor = false;
             this.buttonGet.Click += new System.EventHandler(this.buttonGet_Click);
             // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelError.Location = new System.Drawing.Point(469, 121);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(35, 13);
-            this.labelError.TabIndex = 25;
-            this.labelError.Text = "label1";
-            this.labelError.Visible = false;
-            this.labelError.Click += new System.EventHandler(this.labelError_Click);
-            // 
             // labelFeelsLike
             // 
             this.labelFeelsLike.AutoSize = true;
@@ -345,9 +332,9 @@
             this.listBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxList.FormattingEnabled = true;
             this.listBoxList.ItemHeight = 16;
-            this.listBoxList.Location = new System.Drawing.Point(57, 57);
+            this.listBoxList.Location = new System.Drawing.Point(36, 57);
             this.listBoxList.Name = "listBoxList";
-            this.listBoxList.Size = new System.Drawing.Size(143, 340);
+            this.listBoxList.Size = new System.Drawing.Size(164, 340);
             this.listBoxList.TabIndex = 28;
             this.listBoxList.UseTabStops = false;
             this.listBoxList.SelectedIndexChanged += new System.EventHandler(this.listBoxList_SelectedIndexChanged);
@@ -418,9 +405,9 @@
             // 
             this.flowLayoutPanelForecast.AutoScroll = true;
             this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(24, 421);
+            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(36, 421);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
-            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(813, 109);
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 109);
             this.flowLayoutPanelForecast.TabIndex = 34;
             this.flowLayoutPanelForecast.WrapContents = false;
             // 
@@ -428,7 +415,7 @@
             // 
             this.labelTempForecast.AutoSize = true;
             this.labelTempForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTempForecast.Location = new System.Drawing.Point(97, 572);
+            this.labelTempForecast.Location = new System.Drawing.Point(97, 557);
             this.labelTempForecast.Name = "labelTempForecast";
             this.labelTempForecast.Size = new System.Drawing.Size(51, 20);
             this.labelTempForecast.TabIndex = 38;
@@ -439,7 +426,7 @@
             // 
             this.labelWeatherForecast.AutoSize = true;
             this.labelWeatherForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeatherForecast.Location = new System.Drawing.Point(97, 612);
+            this.labelWeatherForecast.Location = new System.Drawing.Point(97, 597);
             this.labelWeatherForecast.Name = "labelWeatherForecast";
             this.labelWeatherForecast.Size = new System.Drawing.Size(51, 20);
             this.labelWeatherForecast.TabIndex = 37;
@@ -450,7 +437,7 @@
             // 
             this.labelDateTimeForecast.AutoSize = true;
             this.labelDateTimeForecast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateTimeForecast.Location = new System.Drawing.Point(97, 592);
+            this.labelDateTimeForecast.Location = new System.Drawing.Point(97, 577);
             this.labelDateTimeForecast.Name = "labelDateTimeForecast";
             this.labelDateTimeForecast.Size = new System.Drawing.Size(51, 20);
             this.labelDateTimeForecast.TabIndex = 36;
@@ -459,7 +446,7 @@
             // 
             // pictureBoxIconForecast
             // 
-            this.pictureBoxIconForecast.Location = new System.Drawing.Point(36, 572);
+            this.pictureBoxIconForecast.Location = new System.Drawing.Point(36, 557);
             this.pictureBoxIconForecast.Name = "pictureBoxIconForecast";
             this.pictureBoxIconForecast.Size = new System.Drawing.Size(55, 52);
             this.pictureBoxIconForecast.TabIndex = 35;
@@ -470,7 +457,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(863, 663);
+            this.ClientSize = new System.Drawing.Size(909, 663);
             this.Controls.Add(this.labelTempForecast);
             this.Controls.Add(this.labelWeatherForecast);
             this.Controls.Add(this.labelDateTimeForecast);
@@ -484,7 +471,6 @@
             this.Controls.Add(this.listBoxList);
             this.Controls.Add(this.labelFeels);
             this.Controls.Add(this.labelFeelsLike);
-            this.Controls.Add(this.labelError);
             this.Controls.Add(this.buttonGet);
             this.Controls.Add(this.labelSunset);
             this.Controls.Add(this.labelSunrise);
@@ -541,7 +527,6 @@
         private System.Windows.Forms.Label labelSunrise;
         private System.Windows.Forms.Label labelSunset;
         private System.Windows.Forms.Button buttonGet;
-        private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelFeelsLike;
         private System.Windows.Forms.Label labelFeels;
         private System.Windows.Forms.ListBox listBoxList;

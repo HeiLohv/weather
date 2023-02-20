@@ -103,15 +103,12 @@ namespace weather
                 getWeather();
                 showLabels();
                 getForecast();
-                labelError.Text = "";
             }
             catch
             {
-                //Felmeddelande 
-                labelError.Text = "Error";
-                labelError.Visible = true;
+
             }
-        }
+}
 
         private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
         {
@@ -175,9 +172,7 @@ namespace weather
             }
             catch
             {
-                //Felmeddelande 
-                labelError.Text = "Error";
-                labelError.Visible = true;
+
             }
         }
 
@@ -276,25 +271,23 @@ namespace weather
                 weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 //Sätter in data i kontroller
-                pictureBoxIconForecast.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[1].weather[0].icon + ".png";
-                labelWeatherForecast.Text = string.Format("{0}", forecastInfo.list[1].weather[0].main);
-                labelDateTimeForecast.Text = string.Format(convertDateTime(forecastInfo.list[1].dt).DayOfWeek.ToString());
-                labelTempForecast.Text = string.Format("{0}", forecastInfo.list[1].temp.ToString() + "°C");
+                //pictureBoxIconForecast.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[1].weather[0].icon + ".png";
+                //labelWeatherForecast.Text = string.Format("{0}", forecastInfo.list[1].weather[0].main);
+                //labelDateTimeForecast.Text = string.Format(convertDateTime(forecastInfo.list[1].dt).DayOfWeek.ToString());
+                //labelTempForecast.Text = string.Format("{0}", forecastInfo.list[1].temp.ToString() + "°C");
 
-                //ForecastUC fuc;
+                ForecastUC fuc;
 
+                for (int i = 0; i < 30; i++)
+                {
+                    fuc = new ForecastUC();
+                    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
+                    fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
+                    fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
 
-                //for (int i = 0; i < 30; i++)
-                //{
-                //    fuc = new ForecastUC();
-                //    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
-                //    fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
-                //    fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
-                //    fuc.labelTempFuc.Text = forecastInfo.list[i].temp.ToString() + "°C";
-
-                //    //Sätter in i flowLayoutPanel-kontroll
-                //    flowLayoutPanelForecast.Controls.Add(fuc);
-                //}
+                    //Sätter in i flowLayoutPanel-kontroll
+                    flowLayoutPanelForecast.Controls.Add(fuc);
+                }
             }
         }
 
