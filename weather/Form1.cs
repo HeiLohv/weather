@@ -45,9 +45,10 @@ namespace weather
 
         void showLabels()
         {
+            //Skapar en lista
             var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelDateTimeForecast, labelWeatherForecast, labelTempForecast};
 
-            //Gör texter synliga
+            //Gör kontroller i den synliga
             foreach (var label in labels)
                 label.Visible = true;
         }
@@ -123,7 +124,7 @@ namespace weather
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Sätter in i listan
+            //Sätter in i listan från sökfältet
             listBoxList.Items.Add(textBoxSearch_TextChanged.Text);
         }
 
@@ -195,7 +196,7 @@ namespace weather
             else
             {
 
-                //Frågar om man vill ta bort den valda posten 
+                //Frågar om man vill radera vald post
                 var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
 
                 if (confirmResult == DialogResult.Yes)
@@ -224,13 +225,14 @@ namespace weather
                 {
                     listBoxList.Items.Add(line);
                 }
-                Textfile.Close();
-
                 //Stänger filen
+                Textfile.Close();
+                
             }
+            //Om filen inte hittas
             else
-            {
-                MessageBox.Show("Couldn't find file.", "Error");
+            {   
+                MessageBox.Show("File not found", "Error");
             }
         }
 
@@ -287,7 +289,7 @@ namespace weather
                     fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
 
-                    //Sätter in i flowLayoutPanel-kontroll
+                    //Sätter in i flowLayoutPanel
                     flowLayoutPanelForecast.Controls.Add(fuc);
                 }
             }
