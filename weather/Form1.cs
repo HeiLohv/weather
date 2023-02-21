@@ -106,9 +106,14 @@ namespace weather
                 getForecast();
             }
             //Meddelande visas om sökningen inte fungerat
-            catch
+            catch (WebException)
             {
                 searchError();
+                    
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
             }
         }
 
@@ -173,9 +178,14 @@ namespace weather
                 getForecast();
             }
             //Meddelande visas om sökningen inte fungerat
-            catch
+            catch (WebException)
             {
                 searchError();
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
             }
         }
 
@@ -272,7 +282,7 @@ namespace weather
                 int day = 5;
                 string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&cnt={3}&units=metric&exclude-current,minutely,hourly", lat, lon, apiKey, day);
                 var json = web.DownloadString(url);
-                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+                 weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 //Sätter in data i kontroller
                 //pictureBoxIconForecast.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[1].weather[0].icon + ".png";
@@ -282,7 +292,7 @@ namespace weather
 
                 ForecastUC fuc;
 
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     fuc = new ForecastUC();
                     fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
