@@ -104,11 +104,12 @@ namespace weather
                 showLabels();
                 getForecast();
             }
+            //Meddelande visas om sökningen inte fungerat
             catch
             {
-
+                searchError();
             }
-}
+        }
 
         private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
         {
@@ -170,9 +171,10 @@ namespace weather
                 showLabels();
                 getForecast();
             }
+            //Meddelande visas om sökningen inte fungerat
             catch
             {
-
+                searchError();
             }
         }
 
@@ -289,6 +291,11 @@ namespace weather
                     flowLayoutPanelForecast.Controls.Add(fuc);
                 }
             }
+        }
+
+        void searchError()
+        {
+            var searchError = MessageBox.Show("Could not find this location." MessageBoxButtons.OK);
         }
 
         private void labelDateTime_Click(object sender, EventArgs e)
