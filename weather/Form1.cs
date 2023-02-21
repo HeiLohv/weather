@@ -295,7 +295,7 @@ namespace weather
 
         void searchError()
         {
-            var searchError = MessageBox.Show("Could not find this location." MessageBoxButtons.OK);
+            var searchError = MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
         }
 
         private void labelDateTime_Click(object sender, EventArgs e)
