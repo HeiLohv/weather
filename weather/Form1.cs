@@ -46,7 +46,7 @@ namespace weather
         void showLabels()
         {
             //Skapar en lista
-            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelDateTimeForecast, labelWeatherForecast, labelTempForecast};
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime};
 
             //Gör kontroller i den synliga
             foreach (var label in labels)
@@ -279,24 +279,19 @@ namespace weather
             //Kod som tar fram väderprognosdata om plats
             using (WebClient web = new WebClient())
             {
-                int day = 5;
+                int day = 32;
                 string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&cnt={3}&units=metric&exclude-current,minutely,hourly", lat, lon, apiKey, day);
                 var json = web.DownloadString(url);
                  weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
-                //Sätter in data i kontroller
-                //pictureBoxIconForecast.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[1].weather[0].icon + ".png";
-                //labelWeatherForecast.Text = string.Format("{0}", forecastInfo.list[1].weather[0].main);
-                //labelDateTimeForecast.Text = string.Format(convertDateTime(forecastInfo.list[1].dt).DayOfWeek.ToString());
-                //labelTempForecast.Text = string.Format("{0}", forecastInfo.list[1].temp.ToString() + "°C");
-
                 ForecastUC fuc;
 
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < 32; i++)
                 {
                     fuc = new ForecastUC();
                     fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
                     fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
+                    fuc.labelDescriptionFuc.Text = forecastInfo.list[i].weather[0].description;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
 
                     //Sätter in i flowLayoutPanel
