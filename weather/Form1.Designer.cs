@@ -121,7 +121,7 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(467, 185);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(463, 172);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(47, 38);
             this.pictureBoxIcon.TabIndex = 6;
