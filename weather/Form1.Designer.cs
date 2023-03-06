@@ -66,7 +66,7 @@
             // 
             this.labelTemperature.AutoSize = true;
             this.labelTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTemperature.Location = new System.Drawing.Point(353, 144);
+            this.labelTemperature.Location = new System.Drawing.Point(358, 144);
             this.labelTemperature.Name = "labelTemperature";
             this.labelTemperature.Size = new System.Drawing.Size(86, 31);
             this.labelTemperature.TabIndex = 0;
@@ -98,7 +98,7 @@
             // 
             this.labelWeather.AutoSize = true;
             this.labelWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeather.Location = new System.Drawing.Point(354, 185);
+            this.labelWeather.Location = new System.Drawing.Point(359, 185);
             this.labelWeather.Name = "labelWeather";
             this.labelWeather.Size = new System.Drawing.Size(51, 20);
             this.labelWeather.TabIndex = 3;
@@ -121,9 +121,9 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(430, 190);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(467, 185);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(48, 44);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(47, 38);
             this.pictureBoxIcon.TabIndex = 6;
             this.pictureBoxIcon.TabStop = false;
             // 
@@ -131,7 +131,7 @@
             // 
             this.labelDescription.AutoSize = true;
             this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(355, 214);
+            this.labelDescription.Location = new System.Drawing.Point(360, 214);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(51, 20);
             this.labelDescription.TabIndex = 7;
@@ -410,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(198)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(909, 634);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
