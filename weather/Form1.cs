@@ -20,6 +20,9 @@ namespace weather
 
         string file;
 
+        double lon;
+        double lat;
+
         public Form1()
         {
             InitializeComponent();
@@ -40,15 +43,12 @@ namespace weather
 
         }
 
-        double lon;
-        double lat;
-
         void showLabels()
         {
             //Skapar en lista
             var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime};
 
-            //Gör kontroller i den synliga
+            //Gör kontroller i labels synliga
             foreach (var label in labels)
                 label.Visible = true;
         }
@@ -56,43 +56,50 @@ namespace weather
         {
 
             //Tar fram data om platsen som skrivits i sökfältet
-            using (WebClient web = new WebClient())
+            using (var web = new WebClient())
             {
-                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric", textBoxSearch_TextChanged.Text, apiKey);
+                string url = $"https://api.openweathermap.org/data/2.5/weather?q={textBoxSearch_TextChanged.Text}&appid={apiKey}&units=metric";
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
                 //Sätter in data i kontroller
-                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
-                labelWeather.Text = Info.weather[0].main;
-                labelDescription.Text = Info.weather[0].description;
-
-                labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
-                labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
-
-                labelHumidity.Text = Info.main.humidity.ToString();
-                labelPressure.Text = Info.main.pressure.ToString();
-
-                labelWindSpeed.Text = Info.wind.speed.ToString();
-
-                labelTemperature.Text = Info.main.temp.ToString() + "°C";
-                labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
-                labelMaxTemp.Text = Info.main.temp_max.ToString() + "°C";
-                labelFeels.Text = Info.main.feels_like.ToString() + "°C";
-
-                labelDateTime.Text = convertDateTime(Info.dt).ToString();
-
-                lon = Info.coord.lon;
-                lat = Info.coord.lat;
+                weatherLabels(Info);
             }
         }
+
+        private void weatherLabels(weatherInfo.Root Info)
+        {
+            //Sätter in och omvandlar data 
+            pictureBoxIcon.ImageLocation = $"https://openweathermap.org/img/w/{Info.weather[0].icon}.png";
+            labelWeather.Text = Info.weather[0].main;
+            labelDescription.Text = Info.weather[0].description;
+
+            labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
+            labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
+
+            labelHumidity.Text = Info.main.humidity.ToString();
+            labelPressure.Text = Info.main.pressure.ToString();
+
+            labelWindSpeed.Text = Info.wind.speed.ToString();
+
+            labelTemperature.Text = Info.main.temp.ToString() + "°C";
+            labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
+            labelMaxTemp.Text = Info.main.temp_max.ToString() + "°C";
+            labelFeels.Text = Info.main.feels_like.ToString() + "°C";
+
+            labelDateTime.Text = convertDateTime(Info.dt).ToString();
+
+            lon = Info.coord.lon;
+            lat = Info.coord.lat;
+        }
+
         DateTime convertDateTime(long sec)
         {
             //Förvandlar till aktuell tid
-            DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
-            day = day.AddSeconds(sec).ToLocalTime();
+            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            dateTime = dateTime.AddSeconds(sec).ToLocalTime();
 
-            return day;
+            return dateTime;
         }
 
 
@@ -138,33 +145,15 @@ namespace weather
 
             string selected = listBoxList.SelectedItem.ToString();
 
-            using (WebClient web = new WebClient())
+            using (var web = new WebClient())
             {
                 //Tar fram data om vald plats i listan
-                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric", selected, apiKey);
+                var url = $"https://api.openweathermap.org/data/2.5/weather?q={selected}&appid={apiKey}&units=metric";
                 var json = web.DownloadString(url);
                 weatherInfo.Root Info = JsonConvert.DeserializeObject<weatherInfo.Root>(json);
 
                 //Sätter in data i kontroller
-                pictureBoxIcon.ImageLocation = "https://openweathermap.org/img/w/" + Info.weather[0].icon + ".png";
-                labelWeather.Text = Info.weather[0].main;
-                labelDescription.Text = Info.weather[0].description;
-
-                labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
-                labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
-
-                labelHumidity.Text = Info.main.humidity.ToString();
-                labelPressure.Text = Info.main.pressure.ToString();
-
-                labelWindSpeed.Text = Info.wind.speed.ToString();
-
-                labelTemperature.Text = Info.main.temp.ToString() + "°C";
-                labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
-                labelMaxTemp.Text = Info.main.temp_max.ToString() + "°C";
-                labelFeels.Text = Info.main.feels_like.ToString() + "°C";
-
-                labelDateTime.Text = convertDateTime(Info.dt).ToString();
-
+                weatherLabels(Info);
             }
         }
 
@@ -277,19 +266,20 @@ namespace weather
         void getForecast()
         {
             //Kod som tar fram väderprognosdata om plats
-            using (WebClient web = new WebClient())
+            using (var web = new WebClient())
             {
                 int day = 32;
-                string url = string.Format("https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid={2}&cnt={3}&units=metric&exclude-current,minutely,hourly", lat, lon, apiKey, day);
+                string url = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}&cnt={day}&units=metric&exclude-current,minutely,hourly";
                 var json = web.DownloadString(url);
                  weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 ForecastUC fuc;
 
+                //Skapar nya kontroller för varje dag
                 for (int i = 0; i < 32; i++)
                 {
                     fuc = new ForecastUC();
-                    fuc.pictureBoxIconFuc.ImageLocation = "https://openweathermap.org/img/w/" + forecastInfo.list[i].weather[0].icon + ".png";
+                    fuc.pictureBoxIconFuc.ImageLocation = $"https://openweathermap.org/img/w/{forecastInfo.list[i].weather[0].icon}.png";
                     fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
                     fuc.labelDescriptionFuc.Text = forecastInfo.list[i].weather[0].description;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();

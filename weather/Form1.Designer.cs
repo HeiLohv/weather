@@ -127,7 +127,7 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(461, 171);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(463, 171);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(47, 38);
             this.pictureBoxIcon.TabIndex = 6;
@@ -484,7 +484,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Weather";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
