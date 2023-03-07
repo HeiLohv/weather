@@ -294,7 +294,7 @@ namespace weather
                     fuc.labelDescriptionFuc.Text = forecastInfo.list[i].weather[0].description;
                     fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
 
-                    //Sätter in i flowLayoutPanel
+                    //Sätter in i flowLayoutPanelForecast
                     flowLayoutPanelForecast.Controls.Add(fuc);
                 }
             }

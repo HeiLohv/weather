@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelTemperature = new System.Windows.Forms.Label();
             this.labelLocationSearch = new System.Windows.Forms.Label();
             this.textBoxSearch_TextChanged = new System.Windows.Forms.TextBox();
@@ -65,8 +66,9 @@
             // labelTemperature
             // 
             this.labelTemperature.AutoSize = true;
+            this.labelTemperature.BackColor = System.Drawing.Color.Transparent;
             this.labelTemperature.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTemperature.Location = new System.Drawing.Point(358, 144);
+            this.labelTemperature.Location = new System.Drawing.Point(356, 143);
             this.labelTemperature.Name = "labelTemperature";
             this.labelTemperature.Size = new System.Drawing.Size(86, 31);
             this.labelTemperature.TabIndex = 0;
@@ -76,9 +78,10 @@
             // labelLocationSearch
             // 
             this.labelLocationSearch.AutoSize = true;
+            this.labelLocationSearch.BackColor = System.Drawing.Color.Transparent;
             this.labelLocationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocationSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelLocationSearch.Location = new System.Drawing.Point(356, 39);
+            this.labelLocationSearch.Location = new System.Drawing.Point(356, 41);
             this.labelLocationSearch.Name = "labelLocationSearch";
             this.labelLocationSearch.Size = new System.Drawing.Size(74, 20);
             this.labelLocationSearch.TabIndex = 1;
@@ -88,7 +91,7 @@
             // textBoxSearch_TextChanged
             // 
             this.textBoxSearch_TextChanged.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(430, 39);
+            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(430, 41);
             this.textBoxSearch_TextChanged.Name = "textBoxSearch_TextChanged";
             this.textBoxSearch_TextChanged.Size = new System.Drawing.Size(175, 20);
             this.textBoxSearch_TextChanged.TabIndex = 2;
@@ -97,8 +100,9 @@
             // labelWeather
             // 
             this.labelWeather.AutoSize = true;
+            this.labelWeather.BackColor = System.Drawing.Color.Transparent;
             this.labelWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeather.Location = new System.Drawing.Point(359, 185);
+            this.labelWeather.Location = new System.Drawing.Point(357, 184);
             this.labelWeather.Name = "labelWeather";
             this.labelWeather.Size = new System.Drawing.Size(51, 20);
             this.labelWeather.TabIndex = 3;
@@ -109,8 +113,9 @@
             // labelDateTime
             // 
             this.labelDateTime.AutoSize = true;
+            this.labelDateTime.BackColor = System.Drawing.Color.Transparent;
             this.labelDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateTime.Location = new System.Drawing.Point(593, 144);
+            this.labelDateTime.Location = new System.Drawing.Point(591, 143);
             this.labelDateTime.Name = "labelDateTime";
             this.labelDateTime.Size = new System.Drawing.Size(86, 31);
             this.labelDateTime.TabIndex = 4;
@@ -121,7 +126,7 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(463, 172);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(461, 171);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(47, 38);
             this.pictureBoxIcon.TabIndex = 6;
@@ -130,8 +135,9 @@
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
+            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
             this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescription.Location = new System.Drawing.Point(360, 214);
+            this.labelDescription.Location = new System.Drawing.Point(358, 213);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(51, 20);
             this.labelDescription.TabIndex = 7;
@@ -141,8 +147,9 @@
             // labelWindSpeedText
             // 
             this.labelWindSpeedText.AutoSize = true;
+            this.labelWindSpeedText.BackColor = System.Drawing.Color.Transparent;
             this.labelWindSpeedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWindSpeedText.Location = new System.Drawing.Point(596, 295);
+            this.labelWindSpeedText.Location = new System.Drawing.Point(594, 294);
             this.labelWindSpeedText.Name = "labelWindSpeedText";
             this.labelWindSpeedText.Size = new System.Drawing.Size(101, 20);
             this.labelWindSpeedText.TabIndex = 8;
@@ -151,8 +158,9 @@
             // labelHumidityText
             // 
             this.labelHumidityText.AutoSize = true;
+            this.labelHumidityText.BackColor = System.Drawing.Color.Transparent;
             this.labelHumidityText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHumidityText.Location = new System.Drawing.Point(596, 266);
+            this.labelHumidityText.Location = new System.Drawing.Point(594, 265);
             this.labelHumidityText.Name = "labelHumidityText";
             this.labelHumidityText.Size = new System.Drawing.Size(74, 20);
             this.labelHumidityText.TabIndex = 9;
@@ -161,8 +169,9 @@
             // labelHumidity
             // 
             this.labelHumidity.AutoSize = true;
+            this.labelHumidity.BackColor = System.Drawing.Color.Transparent;
             this.labelHumidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHumidity.Location = new System.Drawing.Point(676, 266);
+            this.labelHumidity.Location = new System.Drawing.Point(674, 265);
             this.labelHumidity.Name = "labelHumidity";
             this.labelHumidity.Size = new System.Drawing.Size(51, 20);
             this.labelHumidity.TabIndex = 10;
@@ -172,8 +181,9 @@
             // labelMin
             // 
             this.labelMin.AutoSize = true;
+            this.labelMin.BackColor = System.Drawing.Color.Transparent;
             this.labelMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMin.Location = new System.Drawing.Point(360, 295);
+            this.labelMin.Location = new System.Drawing.Point(358, 294);
             this.labelMin.Name = "labelMin";
             this.labelMin.Size = new System.Drawing.Size(38, 20);
             this.labelMin.TabIndex = 11;
@@ -182,8 +192,9 @@
             // labelMax
             // 
             this.labelMax.AutoSize = true;
+            this.labelMax.BackColor = System.Drawing.Color.Transparent;
             this.labelMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMax.Location = new System.Drawing.Point(359, 324);
+            this.labelMax.Location = new System.Drawing.Point(357, 323);
             this.labelMax.Name = "labelMax";
             this.labelMax.Size = new System.Drawing.Size(42, 20);
             this.labelMax.TabIndex = 12;
@@ -192,8 +203,9 @@
             // labelMaxTemp
             // 
             this.labelMaxTemp.AutoSize = true;
+            this.labelMaxTemp.BackColor = System.Drawing.Color.Transparent;
             this.labelMaxTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaxTemp.Location = new System.Drawing.Point(404, 324);
+            this.labelMaxTemp.Location = new System.Drawing.Point(402, 323);
             this.labelMaxTemp.Name = "labelMaxTemp";
             this.labelMaxTemp.Size = new System.Drawing.Size(51, 20);
             this.labelMaxTemp.TabIndex = 13;
@@ -203,8 +215,9 @@
             // labelMinTemp
             // 
             this.labelMinTemp.AutoSize = true;
+            this.labelMinTemp.BackColor = System.Drawing.Color.Transparent;
             this.labelMinTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMinTemp.Location = new System.Drawing.Point(401, 295);
+            this.labelMinTemp.Location = new System.Drawing.Point(399, 294);
             this.labelMinTemp.Name = "labelMinTemp";
             this.labelMinTemp.Size = new System.Drawing.Size(34, 20);
             this.labelMinTemp.TabIndex = 14;
@@ -214,8 +227,9 @@
             // labelWindSpeed
             // 
             this.labelWindSpeed.AutoSize = true;
+            this.labelWindSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labelWindSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWindSpeed.Location = new System.Drawing.Point(696, 295);
+            this.labelWindSpeed.Location = new System.Drawing.Point(694, 294);
             this.labelWindSpeed.Name = "labelWindSpeed";
             this.labelWindSpeed.Size = new System.Drawing.Size(51, 20);
             this.labelWindSpeed.TabIndex = 15;
@@ -225,8 +239,9 @@
             // labelPressureText
             // 
             this.labelPressureText.AutoSize = true;
+            this.labelPressureText.BackColor = System.Drawing.Color.Transparent;
             this.labelPressureText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPressureText.Location = new System.Drawing.Point(596, 324);
+            this.labelPressureText.Location = new System.Drawing.Point(594, 323);
             this.labelPressureText.Name = "labelPressureText";
             this.labelPressureText.Size = new System.Drawing.Size(76, 20);
             this.labelPressureText.TabIndex = 18;
@@ -235,8 +250,9 @@
             // labelPressure
             // 
             this.labelPressure.AutoSize = true;
+            this.labelPressure.BackColor = System.Drawing.Color.Transparent;
             this.labelPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPressure.Location = new System.Drawing.Point(678, 324);
+            this.labelPressure.Location = new System.Drawing.Point(676, 323);
             this.labelPressure.Name = "labelPressure";
             this.labelPressure.Size = new System.Drawing.Size(51, 20);
             this.labelPressure.TabIndex = 19;
@@ -246,8 +262,9 @@
             // labelSunriseText
             // 
             this.labelSunriseText.AutoSize = true;
+            this.labelSunriseText.BackColor = System.Drawing.Color.Transparent;
             this.labelSunriseText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunriseText.Location = new System.Drawing.Point(596, 185);
+            this.labelSunriseText.Location = new System.Drawing.Point(594, 184);
             this.labelSunriseText.Name = "labelSunriseText";
             this.labelSunriseText.Size = new System.Drawing.Size(67, 20);
             this.labelSunriseText.TabIndex = 20;
@@ -256,8 +273,9 @@
             // labelSunsetText
             // 
             this.labelSunsetText.AutoSize = true;
+            this.labelSunsetText.BackColor = System.Drawing.Color.Transparent;
             this.labelSunsetText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunsetText.Location = new System.Drawing.Point(596, 214);
+            this.labelSunsetText.Location = new System.Drawing.Point(594, 213);
             this.labelSunsetText.Name = "labelSunsetText";
             this.labelSunsetText.Size = new System.Drawing.Size(64, 20);
             this.labelSunsetText.TabIndex = 21;
@@ -266,8 +284,9 @@
             // labelSunrise
             // 
             this.labelSunrise.AutoSize = true;
+            this.labelSunrise.BackColor = System.Drawing.Color.Transparent;
             this.labelSunrise.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunrise.Location = new System.Drawing.Point(669, 185);
+            this.labelSunrise.Location = new System.Drawing.Point(667, 184);
             this.labelSunrise.Name = "labelSunrise";
             this.labelSunrise.Size = new System.Drawing.Size(51, 20);
             this.labelSunrise.TabIndex = 22;
@@ -277,8 +296,9 @@
             // labelSunset
             // 
             this.labelSunset.AutoSize = true;
+            this.labelSunset.BackColor = System.Drawing.Color.Transparent;
             this.labelSunset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSunset.Location = new System.Drawing.Point(666, 214);
+            this.labelSunset.Location = new System.Drawing.Point(664, 213);
             this.labelSunset.Name = "labelSunset";
             this.labelSunset.Size = new System.Drawing.Size(51, 20);
             this.labelSunset.TabIndex = 23;
@@ -291,7 +311,7 @@
             this.buttonGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonGet.Location = new System.Drawing.Point(430, 66);
+            this.buttonGet.Location = new System.Drawing.Point(430, 68);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(56, 22);
             this.buttonGet.TabIndex = 24;
@@ -302,8 +322,9 @@
             // labelFeelsLike
             // 
             this.labelFeelsLike.AutoSize = true;
+            this.labelFeelsLike.BackColor = System.Drawing.Color.Transparent;
             this.labelFeelsLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFeelsLike.Location = new System.Drawing.Point(359, 266);
+            this.labelFeelsLike.Location = new System.Drawing.Point(357, 265);
             this.labelFeelsLike.Name = "labelFeelsLike";
             this.labelFeelsLike.Size = new System.Drawing.Size(79, 20);
             this.labelFeelsLike.TabIndex = 26;
@@ -314,8 +335,9 @@
             // labelFeels
             // 
             this.labelFeels.AutoSize = true;
+            this.labelFeels.BackColor = System.Drawing.Color.Transparent;
             this.labelFeels.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFeels.Location = new System.Drawing.Point(444, 266);
+            this.labelFeels.Location = new System.Drawing.Point(442, 265);
             this.labelFeels.Name = "labelFeels";
             this.labelFeels.Size = new System.Drawing.Size(51, 20);
             this.labelFeels.TabIndex = 27;
@@ -328,7 +350,7 @@
             this.listBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxList.FormattingEnabled = true;
             this.listBoxList.ItemHeight = 16;
-            this.listBoxList.Location = new System.Drawing.Point(45, 39);
+            this.listBoxList.Location = new System.Drawing.Point(45, 41);
             this.listBoxList.Name = "listBoxList";
             this.listBoxList.Size = new System.Drawing.Size(177, 340);
             this.listBoxList.TabIndex = 28;
@@ -341,7 +363,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAdd.Location = new System.Drawing.Point(492, 66);
+            this.buttonAdd.Location = new System.Drawing.Point(492, 68);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(71, 22);
             this.buttonAdd.TabIndex = 29;
@@ -353,7 +375,7 @@
             // 
             this.buttonShow.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonShow.Location = new System.Drawing.Point(237, 51);
+            this.buttonShow.Location = new System.Drawing.Point(237, 53);
             this.buttonShow.Name = "buttonShow";
             this.buttonShow.Size = new System.Drawing.Size(60, 22);
             this.buttonShow.TabIndex = 30;
@@ -365,7 +387,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDelete.Location = new System.Drawing.Point(237, 89);
+            this.buttonDelete.Location = new System.Drawing.Point(237, 91);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(60, 22);
             this.buttonDelete.TabIndex = 31;
@@ -377,7 +399,7 @@
             // 
             this.buttonReadFile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonReadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonReadFile.Location = new System.Drawing.Point(237, 164);
+            this.buttonReadFile.Location = new System.Drawing.Point(237, 166);
             this.buttonReadFile.Name = "buttonReadFile";
             this.buttonReadFile.Size = new System.Drawing.Size(60, 22);
             this.buttonReadFile.TabIndex = 32;
@@ -389,7 +411,7 @@
             // 
             this.buttonSave.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSave.Location = new System.Drawing.Point(237, 127);
+            this.buttonSave.Location = new System.Drawing.Point(237, 129);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(60, 22);
             this.buttonSave.TabIndex = 33;
@@ -401,17 +423,19 @@
             // 
             this.flowLayoutPanelForecast.AutoScroll = true;
             this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(45, 403);
+            this.flowLayoutPanelForecast.Location = new System.Drawing.Point(45, 409);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
-            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 188);
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 198);
             this.flowLayoutPanelForecast.TabIndex = 34;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(198)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(909, 634);
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(923, 638);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonReadFile);
@@ -443,6 +467,8 @@
             this.Controls.Add(this.textBoxSearch_TextChanged);
             this.Controls.Add(this.labelLocationSearch);
             this.Controls.Add(this.labelTemperature);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
