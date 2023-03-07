@@ -60,6 +60,7 @@
             this.buttonReadFile = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.flowLayoutPanelForecast = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -428,6 +429,18 @@
             this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 198);
             this.flowLayoutPanelForecast.TabIndex = 34;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClear.Location = new System.Drawing.Point(237, 202);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(60, 22);
+            this.buttonClear.TabIndex = 35;
+            this.buttonClear.Text = "Clear ";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +449,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(923, 638);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonReadFile);
@@ -511,6 +525,7 @@
         private System.Windows.Forms.Button buttonReadFile;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelForecast;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

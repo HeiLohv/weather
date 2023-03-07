@@ -309,5 +309,21 @@ namespace weather
         {
             
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            var clearListbox = MessageBox.Show("Clear listbox?", "Clear", MessageBoxButtons.YesNo);
+
+            if (clearListbox == DialogResult.Yes)
+            {
+                //Tömmer listBoxList
+                listBoxList.Items.Clear();
+            }
+            else
+            {
+                //Meddelandet stängs   
+
+            }
+        }
     }
 }
