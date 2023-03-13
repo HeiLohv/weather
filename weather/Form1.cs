@@ -30,17 +30,8 @@ namespace weather
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //textfil dit städer kommer att sparas
             file = "../../locations.txt";
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelWeather_Click(object sender, EventArgs e)
-        {
-
         }
 
         void showLabels()
@@ -48,7 +39,7 @@ namespace weather
             //Skapar en lista
             var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime};
 
-            //Gör kontroller i labels synliga
+            //Gör kontroller i listan labels synliga
             foreach (var label in labels)
                 label.Visible = true;
         }
@@ -69,8 +60,9 @@ namespace weather
 
         private void weatherLabels(weatherInfo.Root Info)
         {
-            //Sätter in och omvandlar data 
+            //Sätter in och omvandlar data så att det kan visas 
             pictureBoxIcon.ImageLocation = $"https://openweathermap.org/img/w/{Info.weather[0].icon}.png";
+
             labelWeather.Text = Info.weather[0].main;
             labelDescription.Text = Info.weather[0].description;
 
@@ -95,7 +87,7 @@ namespace weather
 
         DateTime convertDateTime(long sec)
         {
-            //Förvandlar till aktuell tid
+            //Omvandlar tid
             DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dateTime = dateTime.AddSeconds(sec).ToLocalTime();
 
@@ -124,16 +116,6 @@ namespace weather
             }
         }
 
-        private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBoxList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             //Sätter in i listan från sökfältet
@@ -142,7 +124,7 @@ namespace weather
 
         void showWeather()
         {
-
+            //Vald post 
             string selected = listBoxList.SelectedItem.ToString();
 
             using (var web = new WebClient())
@@ -166,7 +148,7 @@ namespace weather
                 showLabels();
                 getForecast();
             }
-            //Meddelande visas om sökningen inte fungerat
+            //Felmeddelande visas om sökningen inte fungerat
             catch (WebException)
             {
                 searchError();
@@ -209,11 +191,11 @@ namespace weather
 
                 }
             };
-
         }
 
         private void buttonReadFile_Click(object sender, EventArgs e)
         {
+            //Om filen finns
             if (File.Exists(file))
             {
                 StreamReader Textfile = new StreamReader(file);
@@ -237,7 +219,7 @@ namespace weather
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //Skriver till textfilen med StreamWriter
+            //Sparar till textfil
             using (StreamWriter writer = new StreamWriter(file))
             {
                 foreach (var item in listBoxList.Items)
@@ -245,6 +227,71 @@ namespace weather
                     writer.WriteLine(item);
                 }
             }
+        }
+
+        void getForecast()
+        {
+            //Kod som tar fram väderprognosdata om plats
+            using (var web = new WebClient())
+            {
+                int day = 32;
+                string url = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}&cnt={day}&units=metric&exclude-current,minutely,hourly";
+                var json = web.DownloadString(url);
+                 weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+
+                ForecastUC fuc;
+
+                //Skapar ny kontroll för varje dag
+                for (int i = 0; i < 32; i++)
+                {
+                    fuc = new ForecastUC();
+                    fuc.pictureBoxIconFuc.ImageLocation = $"https://openweathermap.org/img/w/{forecastInfo.list[i].weather[0].icon}.png";
+                    fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
+                    fuc.labelDescriptionFuc.Text = forecastInfo.list[i].weather[0].description;
+                    fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
+
+                    //Sätter in i flowLayoutPanelForecast
+                    flowLayoutPanelForecast.Controls.Add(fuc);
+                }
+            }
+        }
+
+        void searchError()
+        {
+            //Felmeddelande som kommer att visas vid sökningsfel
+            var searchError = MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            //Frågar om du vill tömma listBoxList
+            var clearListbox = MessageBox.Show("Clear listbox?", "Clear", MessageBoxButtons.YesNo);
+
+            if (clearListbox == DialogResult.Yes)
+            {
+                //Tömmer listBoxList
+                listBoxList.Items.Clear();
+            }
+            else
+            {
+                //Meddelandet stängs   
+
+            }
+        }
+
+        private void labelDateTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelWeather_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void labelError_Click(object sender, EventArgs e)
@@ -262,58 +309,14 @@ namespace weather
 
         }
 
-
-        void getForecast()
+        private void textBoxSearch_TextChanged_TextChanged(object sender, EventArgs e)
         {
-            //Kod som tar fram väderprognosdata om plats
-            using (var web = new WebClient())
-            {
-                int day = 32;
-                string url = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}&cnt={day}&units=metric&exclude-current,minutely,hourly";
-                var json = web.DownloadString(url);
-                 weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
-                ForecastUC fuc;
-
-                //Skapar nya kontroller för varje dag
-                for (int i = 0; i < 32; i++)
-                {
-                    fuc = new ForecastUC();
-                    fuc.pictureBoxIconFuc.ImageLocation = $"https://openweathermap.org/img/w/{forecastInfo.list[i].weather[0].icon}.png";
-                    fuc.labelWeatherFuc.Text = forecastInfo.list[i].weather[0].main;
-                    fuc.labelDescriptionFuc.Text = forecastInfo.list[i].weather[0].description;
-                    fuc.labelDateTimeFuc.Text = convertDateTime(forecastInfo.list[i].dt).DayOfWeek.ToString();
-
-                    //Sätter in i flowLayoutPanelForecast
-                    flowLayoutPanelForecast.Controls.Add(fuc);
-                }
-            }
         }
 
-        void searchError()
+        private void listBoxList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var searchError = MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
-        }
 
-        private void labelDateTime_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            var clearListbox = MessageBox.Show("Clear listbox?", "Clear", MessageBoxButtons.YesNo);
-
-            if (clearListbox == DialogResult.Yes)
-            {
-                //Tömmer listBoxList
-                listBoxList.Items.Clear();
-            }
-            else
-            {
-                //Meddelandet stängs   
-
-            }
         }
     }
 }
