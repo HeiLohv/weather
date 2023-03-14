@@ -147,8 +147,8 @@ namespace weather
             {
                 MessageBox.Show("You have not selected an item.", "No item selected", MessageBoxButtons.OK);
             }
-
-            else{
+            else
+            {
                 try
                 {
                     //Visar upp information om vädret
@@ -160,11 +160,9 @@ namespace weather
                 catch (WebException)
                 {
                     searchError();
-
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-
                 }
             }; 
         }
@@ -265,7 +263,7 @@ namespace weather
         void searchError()
         {
             //Felmeddelande som kommer att visas vid sökfel
-            var searchError = MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
+            MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
