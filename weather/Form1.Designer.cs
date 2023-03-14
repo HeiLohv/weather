@@ -129,7 +129,7 @@
             this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxIcon.Location = new System.Drawing.Point(473, 168);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(58, 41);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(63, 41);
             this.pictureBoxIcon.TabIndex = 6;
             this.pictureBoxIcon.TabStop = false;
             // 
@@ -433,7 +433,7 @@
             this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanelForecast.Location = new System.Drawing.Point(56, 415);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
-            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 216);
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 229);
             this.flowLayoutPanelForecast.TabIndex = 34;
             // 
             // buttonClear
@@ -455,7 +455,7 @@
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(939, 661);
+            this.ClientSize = new System.Drawing.Size(939, 674);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
