@@ -39,7 +39,7 @@
             // 
             this.pictureBoxIconFuc.Location = new System.Drawing.Point(13, 14);
             this.pictureBoxIconFuc.Name = "pictureBoxIconFuc";
-            this.pictureBoxIconFuc.Size = new System.Drawing.Size(55, 52);
+            this.pictureBoxIconFuc.Size = new System.Drawing.Size(60, 52);
             this.pictureBoxIconFuc.TabIndex = 0;
             this.pictureBoxIconFuc.TabStop = false;
             // 
@@ -47,7 +47,7 @@
             // 
             this.labelDateTimeFuc.AutoSize = true;
             this.labelDateTimeFuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateTimeFuc.Location = new System.Drawing.Point(74, 14);
+            this.labelDateTimeFuc.Location = new System.Drawing.Point(79, 14);
             this.labelDateTimeFuc.Name = "labelDateTimeFuc";
             this.labelDateTimeFuc.Size = new System.Drawing.Size(45, 16);
             this.labelDateTimeFuc.TabIndex = 1;
@@ -56,20 +56,20 @@
             // labelWeatherFuc
             // 
             this.labelWeatherFuc.AutoSize = true;
-            this.labelWeatherFuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWeatherFuc.Location = new System.Drawing.Point(76, 34);
+            this.labelWeatherFuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWeatherFuc.Location = new System.Drawing.Point(79, 33);
             this.labelWeatherFuc.Name = "labelWeatherFuc";
-            this.labelWeatherFuc.Size = new System.Drawing.Size(35, 13);
+            this.labelWeatherFuc.Size = new System.Drawing.Size(41, 15);
             this.labelWeatherFuc.TabIndex = 2;
             this.labelWeatherFuc.Text = "label1";
             // 
             // labelDescriptionFuc
             // 
             this.labelDescriptionFuc.AutoSize = true;
-            this.labelDescriptionFuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescriptionFuc.Location = new System.Drawing.Point(76, 50);
+            this.labelDescriptionFuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescriptionFuc.Location = new System.Drawing.Point(79, 51);
             this.labelDescriptionFuc.Name = "labelDescriptionFuc";
-            this.labelDescriptionFuc.Size = new System.Drawing.Size(35, 13);
+            this.labelDescriptionFuc.Size = new System.Drawing.Size(41, 15);
             this.labelDescriptionFuc.TabIndex = 3;
             this.labelDescriptionFuc.Text = "label1";
             // 

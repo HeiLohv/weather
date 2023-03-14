@@ -80,21 +80,22 @@
             // 
             this.labelLocationSearch.AutoSize = true;
             this.labelLocationSearch.BackColor = System.Drawing.Color.Transparent;
-            this.labelLocationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLocationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocationSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelLocationSearch.Location = new System.Drawing.Point(374, 53);
+            this.labelLocationSearch.Location = new System.Drawing.Point(364, 50);
             this.labelLocationSearch.Name = "labelLocationSearch";
-            this.labelLocationSearch.Size = new System.Drawing.Size(74, 20);
+            this.labelLocationSearch.Size = new System.Drawing.Size(86, 24);
             this.labelLocationSearch.TabIndex = 1;
             this.labelLocationSearch.Text = "Location:";
             this.labelLocationSearch.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxSearch_TextChanged
             // 
+            this.textBoxSearch_TextChanged.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch_TextChanged.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(448, 53);
+            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(450, 54);
             this.textBoxSearch_TextChanged.Name = "textBoxSearch_TextChanged";
-            this.textBoxSearch_TextChanged.Size = new System.Drawing.Size(175, 20);
+            this.textBoxSearch_TextChanged.Size = new System.Drawing.Size(175, 22);
             this.textBoxSearch_TextChanged.TabIndex = 2;
             this.textBoxSearch_TextChanged.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged_TextChanged);
             // 
@@ -317,11 +318,11 @@
             // 
             this.buttonGet.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonGet.Location = new System.Drawing.Point(448, 80);
+            this.buttonGet.Location = new System.Drawing.Point(451, 82);
             this.buttonGet.Name = "buttonGet";
-            this.buttonGet.Size = new System.Drawing.Size(56, 24);
+            this.buttonGet.Size = new System.Drawing.Size(61, 29);
             this.buttonGet.TabIndex = 24;
             this.buttonGet.Text = "Search";
             this.buttonGet.UseVisualStyleBackColor = false;
@@ -355,12 +356,12 @@
             // 
             // listBoxList
             // 
-            this.listBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxList.FormattingEnabled = true;
-            this.listBoxList.ItemHeight = 16;
+            this.listBoxList.ItemHeight = 18;
             this.listBoxList.Location = new System.Drawing.Point(56, 42);
             this.listBoxList.Name = "listBoxList";
-            this.listBoxList.Size = new System.Drawing.Size(177, 340);
+            this.listBoxList.Size = new System.Drawing.Size(177, 346);
             this.listBoxList.TabIndex = 28;
             this.listBoxList.UseTabStops = false;
             this.listBoxList.SelectedIndexChanged += new System.EventHandler(this.listBoxList_SelectedIndexChanged);
@@ -369,11 +370,11 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAdd.Location = new System.Drawing.Point(512, 80);
+            this.buttonAdd.Location = new System.Drawing.Point(517, 82);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 24);
+            this.buttonAdd.Size = new System.Drawing.Size(80, 29);
             this.buttonAdd.TabIndex = 29;
             this.buttonAdd.Text = "Add to list";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -383,9 +384,10 @@
             // 
             this.buttonShow.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonShow.Location = new System.Drawing.Point(247, 49);
+            this.buttonShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShow.Location = new System.Drawing.Point(244, 42);
             this.buttonShow.Name = "buttonShow";
-            this.buttonShow.Size = new System.Drawing.Size(60, 24);
+            this.buttonShow.Size = new System.Drawing.Size(70, 29);
             this.buttonShow.TabIndex = 30;
             this.buttonShow.Text = "Show";
             this.buttonShow.UseVisualStyleBackColor = false;
@@ -395,9 +397,10 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDelete.Location = new System.Drawing.Point(247, 167);
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Location = new System.Drawing.Point(244, 166);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(60, 24);
+            this.buttonDelete.Size = new System.Drawing.Size(70, 29);
             this.buttonDelete.TabIndex = 31;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -407,9 +410,10 @@
             // 
             this.buttonReadFile.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonReadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonReadFile.Location = new System.Drawing.Point(247, 89);
+            this.buttonReadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReadFile.Location = new System.Drawing.Point(244, 84);
             this.buttonReadFile.Name = "buttonReadFile";
-            this.buttonReadFile.Size = new System.Drawing.Size(60, 24);
+            this.buttonReadFile.Size = new System.Drawing.Size(70, 29);
             this.buttonReadFile.TabIndex = 32;
             this.buttonReadFile.Text = "Read file";
             this.buttonReadFile.UseVisualStyleBackColor = false;
@@ -419,9 +423,10 @@
             // 
             this.buttonSave.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSave.Location = new System.Drawing.Point(247, 128);
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Location = new System.Drawing.Point(244, 125);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(60, 24);
+            this.buttonSave.Size = new System.Drawing.Size(70, 29);
             this.buttonSave.TabIndex = 33;
             this.buttonSave.Text = "Save ";
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -440,9 +445,10 @@
             // 
             this.buttonClear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonClear.Location = new System.Drawing.Point(247, 206);
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClear.Location = new System.Drawing.Point(244, 207);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(60, 24);
+            this.buttonClear.Size = new System.Drawing.Size(70, 29);
             this.buttonClear.TabIndex = 35;
             this.buttonClear.Text = "Clear ";
             this.buttonClear.UseVisualStyleBackColor = false;
