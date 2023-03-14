@@ -142,22 +142,29 @@ namespace weather
         private void buttonShow_Click(object sender, EventArgs e)
         {
             //Visar upp information om vädret
-            try
+            if(listBoxList.SelectedIndex <= -1)
             {
-                showWeather();
-                showLabels();
-                getForecast();
+                var itemNotSelected = MessageBox.Show("You have not selected an item.", "No item selected", MessageBoxButtons.OK);
             }
-            //Felmeddelande visas om sökningen inte fungerat
-            catch (WebException)
-            {
-                searchError();
+            else{
+                try
+                {
+                    showWeather();
+                    showLabels();
+                    getForecast();
+                }
+                //Felmeddelande visas om sökningen inte fungerat
+                catch (WebException)
+                {
+                    searchError();
 
-            }
-            catch (ArgumentOutOfRangeException)
-            {
+                }
+                catch (ArgumentOutOfRangeException)
+                {
 
-            }
+                }
+            };
+            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
