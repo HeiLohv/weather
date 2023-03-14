@@ -82,7 +82,7 @@
             this.labelLocationSearch.BackColor = System.Drawing.Color.Transparent;
             this.labelLocationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocationSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelLocationSearch.Location = new System.Drawing.Point(361, 53);
+            this.labelLocationSearch.Location = new System.Drawing.Point(374, 53);
             this.labelLocationSearch.Name = "labelLocationSearch";
             this.labelLocationSearch.Size = new System.Drawing.Size(74, 20);
             this.labelLocationSearch.TabIndex = 1;
@@ -92,7 +92,7 @@
             // textBoxSearch_TextChanged
             // 
             this.textBoxSearch_TextChanged.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(435, 53);
+            this.textBoxSearch_TextChanged.Location = new System.Drawing.Point(448, 53);
             this.textBoxSearch_TextChanged.Name = "textBoxSearch_TextChanged";
             this.textBoxSearch_TextChanged.Size = new System.Drawing.Size(175, 20);
             this.textBoxSearch_TextChanged.TabIndex = 2;
@@ -319,7 +319,7 @@
             this.buttonGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGet.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonGet.Location = new System.Drawing.Point(435, 80);
+            this.buttonGet.Location = new System.Drawing.Point(448, 80);
             this.buttonGet.Name = "buttonGet";
             this.buttonGet.Size = new System.Drawing.Size(56, 24);
             this.buttonGet.TabIndex = 24;
@@ -371,7 +371,7 @@
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAdd.Location = new System.Drawing.Point(499, 80);
+            this.buttonAdd.Location = new System.Drawing.Point(512, 80);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 24);
             this.buttonAdd.TabIndex = 29;
@@ -433,7 +433,7 @@
             this.flowLayoutPanelForecast.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutPanelForecast.Location = new System.Drawing.Point(56, 415);
             this.flowLayoutPanelForecast.Name = "flowLayoutPanelForecast";
-            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 211);
+            this.flowLayoutPanelForecast.Size = new System.Drawing.Size(833, 216);
             this.flowLayoutPanelForecast.TabIndex = 34;
             // 
             // buttonClear
@@ -455,7 +455,7 @@
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(944, 658);
+            this.ClientSize = new System.Drawing.Size(939, 661);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.flowLayoutPanelForecast);
             this.Controls.Add(this.buttonSave);
