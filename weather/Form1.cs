@@ -141,7 +141,7 @@ namespace weather
 
         private void buttonShow_Click(object sender, EventArgs e)
         {
-            //Visar upp information om vädret
+            //Om man inte har valt någon post
             if(listBoxList.SelectedIndex <= -1)
             {
                 var itemNotSelected = MessageBox.Show("You have not selected an item.", "No item selected", MessageBoxButtons.OK);
@@ -149,6 +149,7 @@ namespace weather
             else{
                 try
                 {
+                    //Visar upp information om vädret
                     showWeather();
                     showLabels();
                     getForecast();
