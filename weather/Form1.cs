@@ -30,16 +30,16 @@ namespace weather
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //textfil dit städer kommer att sparas
+            //Textfil dit städer kommer att sparas
             file = "../../locations.txt";
         }
 
         void showLabels()
         {
-            //Skapar en lista
+            //Skapar en ny lista
             var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelSunriseText, labelSunsetText, labelHumidityText, labelPressureText, labelWindSpeedText, labelMinTempText, labelMaxTempText};
 
-            //Gör kontroller i listan labels synliga
+            //Gör alla etiketter i listan synliga
             foreach (var label in labels)
                 label.Visible = true;
         }
@@ -104,7 +104,8 @@ namespace weather
                 showLabels();
                 getForecast();
             }
-            //Meddelande visas om sökningen inte fungerat
+
+            //Felmeddelande visas om sökningen inte fungerat
             catch (WebException)
             {
                 searchError();
@@ -144,8 +145,9 @@ namespace weather
             //Om man inte har valt någon post
             if(listBoxList.SelectedIndex <= -1)
             {
-                var itemNotSelected = MessageBox.Show("You have not selected an item.", "No item selected", MessageBoxButtons.OK);
+                MessageBox.Show("You have not selected an item.", "No item selected", MessageBoxButtons.OK);
             }
+
             else{
                 try
                 {
@@ -164,8 +166,7 @@ namespace weather
                 {
 
                 }
-            };
-            
+            }; 
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -175,16 +176,15 @@ namespace weather
             //Om listan är tom
             if (listBoxList.Items.Count < 1)
             {
-                var listBoxIsEmpty = MessageBox.Show("There are no items to delete.", "Empty list", MessageBoxButtons.OK);
+                MessageBox.Show("There are no items to delete.", "Empty list", MessageBoxButtons.OK);
             }
             //Om man inte har valt någon post att radera
             else if (listBoxList.SelectedIndex <= -1)
             {
-                var itemNotSelected = MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
+                MessageBox.Show("You have not selected an item to delete.", "No item selected", MessageBoxButtons.OK);
             }
             else
             {
-
                 //Frågar om man vill radera vald post
                 var confirmResult = MessageBox.Show(delete, "Delete item", MessageBoxButtons.YesNo);
 
@@ -196,7 +196,6 @@ namespace weather
                 else
                 {
                     //Meddelandet stängs   
-
                 }
             };
         }
@@ -215,8 +214,7 @@ namespace weather
                     listBoxList.Items.Add(line);
                 }
                 //Stänger filen
-                Textfile.Close();
-                
+                Textfile.Close(); 
             }
             //Om filen inte hittas
             else
@@ -227,7 +225,7 @@ namespace weather
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //Sparar till textfil
+            //Sparar varje rad till textfil
             using (StreamWriter writer = new StreamWriter(file))
             {
                 foreach (var item in listBoxList.Items)
@@ -245,7 +243,7 @@ namespace weather
                 int day = 32;
                 string url = $"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}&cnt={day}&units=metric&exclude-current,minutely,hourly";
                 var json = web.DownloadString(url);
-                 weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
+                weatherForecast.forecastInfo forecastInfo = JsonConvert.DeserializeObject<weatherForecast.forecastInfo>(json);
 
                 ForecastUC fuc;
 
@@ -266,7 +264,7 @@ namespace weather
 
         void searchError()
         {
-            //Felmeddelande som kommer att visas vid sökningsfel
+            //Felmeddelande som kommer att visas vid sökfel
             var searchError = MessageBox.Show("Could not find this location.", "Invalid search", MessageBoxButtons.OK);
         }
 
