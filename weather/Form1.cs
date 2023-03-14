@@ -37,7 +37,7 @@ namespace weather
         void showLabels()
         {
             //Skapar en lista
-            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime};
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelSunriseText, labelSunsetText, labelHumidityText, labelPressureText, labelWindSpeedText, labelMinTempText, labelMaxTempText};
 
             //Gör kontroller i listan labels synliga
             foreach (var label in labels)
@@ -69,10 +69,10 @@ namespace weather
             labelSunrise.Text = convertDateTime(Info.sys.sunrise).ToShortTimeString();
             labelSunset.Text = convertDateTime(Info.sys.sunset).ToShortTimeString();
 
-            labelHumidity.Text = Info.main.humidity.ToString();
-            labelPressure.Text = Info.main.pressure.ToString();
+            labelHumidity.Text = Info.main.humidity.ToString() + "%";
+            labelPressure.Text = Info.main.pressure.ToString() + " mb";
 
-            labelWindSpeed.Text = Info.wind.speed.ToString();
+            labelWindSpeed.Text = Info.wind.speed.ToString() + " m/s";
 
             labelTemperature.Text = Info.main.temp.ToString() + "°C";
             labelMinTemp.Text = Info.main.temp_min.ToString() + "°C";
