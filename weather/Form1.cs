@@ -128,6 +128,8 @@ namespace weather
             //Vald post 
             string selected = listBoxList.SelectedItem.ToString();
 
+            textBoxSearch_TextChanged.Clear();
+
             using (var web = new WebClient())
             {
                 //Tar fram data om vald plats i listan
