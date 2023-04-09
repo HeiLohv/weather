@@ -156,7 +156,6 @@
             this.labelWindSpeedText.Size = new System.Drawing.Size(101, 20);
             this.labelWindSpeedText.TabIndex = 8;
             this.labelWindSpeedText.Text = "Wind speed: ";
-            this.labelWindSpeedText.Visible = false;
             // 
             // labelHumidityText
             // 
@@ -168,7 +167,6 @@
             this.labelHumidityText.Size = new System.Drawing.Size(74, 20);
             this.labelHumidityText.TabIndex = 9;
             this.labelHumidityText.Text = "Humidity:";
-            this.labelHumidityText.Visible = false;
             // 
             // labelHumidity
             // 
@@ -192,7 +190,6 @@
             this.labelMinTempText.Size = new System.Drawing.Size(38, 20);
             this.labelMinTempText.TabIndex = 11;
             this.labelMinTempText.Text = "Min:";
-            this.labelMinTempText.Visible = false;
             // 
             // labelMaxTempText
             // 
@@ -204,7 +201,6 @@
             this.labelMaxTempText.Size = new System.Drawing.Size(42, 20);
             this.labelMaxTempText.TabIndex = 12;
             this.labelMaxTempText.Text = "Max:";
-            this.labelMaxTempText.Visible = false;
             // 
             // labelMaxTemp
             // 
@@ -252,7 +248,6 @@
             this.labelPressureText.Size = new System.Drawing.Size(76, 20);
             this.labelPressureText.TabIndex = 18;
             this.labelPressureText.Text = "Pressure:";
-            this.labelPressureText.Visible = false;
             // 
             // labelPressure
             // 
@@ -276,7 +271,6 @@
             this.labelSunriseText.Size = new System.Drawing.Size(67, 20);
             this.labelSunriseText.TabIndex = 20;
             this.labelSunriseText.Text = "Sunrise:";
-            this.labelSunriseText.Visible = false;
             // 
             // labelSunsetText
             // 
@@ -288,7 +282,6 @@
             this.labelSunsetText.Size = new System.Drawing.Size(64, 20);
             this.labelSunsetText.TabIndex = 21;
             this.labelSunsetText.Text = "Sunset:";
-            this.labelSunsetText.Visible = false;
             // 
             // labelSunrise
             // 
@@ -338,7 +331,6 @@
             this.labelFeelsLike.Size = new System.Drawing.Size(79, 20);
             this.labelFeelsLike.TabIndex = 26;
             this.labelFeelsLike.Text = "Feels like:";
-            this.labelFeelsLike.Visible = false;
             this.labelFeelsLike.Click += new System.EventHandler(this.labelFeelsLike_Click);
             // 
             // labelFeels

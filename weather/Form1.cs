@@ -37,7 +37,7 @@ namespace weather
         void showLabels()
         {
             //Skapar en ny lista
-            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeelsLike, labelFeels, labelDateTime, labelSunriseText, labelSunsetText, labelHumidityText, labelPressureText, labelWindSpeedText, labelMinTempText, labelMaxTempText};
+            var labels = new List<Label> { labelWeather, labelDescription, labelSunrise, labelSunset, labelHumidity, labelPressure, labelWindSpeed, labelTemperature, labelMinTemp, labelMaxTemp, labelFeels, labelDateTime};
 
             //Gör alla etiketter i listan synliga
             foreach (var label in labels)
